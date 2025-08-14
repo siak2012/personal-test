@@ -1,365 +1,400 @@
+function ensureCsv() {
+  if (!fs.existsSync(CSV_PATH)) {
+    fs.writeFileSync(
+      CSV_PATH,
+      'timestamp,source,subscriptionId,signature,mint,buyPrice,sellPrice,pnlPerc,pnlSol,liqUsd,liqSol,volUsd\n'
+    );
+  }
+}
+
+// ws-listener-advanced-v2.js
+// Listener WS con filtros + blocklist + trazas HIT/MISS + simulación básica
+
 import 'dotenv/config';
 import WebSocket from 'ws';
 import axios from 'axios';
-import path from 'path';
-import https from 'https';
-import { createObjectCsvWriter } from 'csv-writer';
+import fs from 'fs';
 
-// ===================== ENV / CONFIG =====================
-const WS_URL = process.env.RPC_URL_WS;
-const BIRDEYE_KEY = (process.env.BIRDEYE_KEY || '').trim();
+const ONLY_HITS     = process.env.ONLY_HITS === '1';
+const DEBUG_MARKET  = process.env.DEBUG_MARKET === '1';
+
+// ================== ENV & CONFIG ==================
+const WS_URL = process.env.RPC_URL_WS || 'wss://api.mainnet-beta.solana.com';
 
 const RAYDIUM_PROGRAM_IDS = (process.env.RAYDIUM_PROGRAM_IDS || '')
-  .split(',').map(s => s.trim()).filter(Boolean);
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean);
 
-const PUMPFUN_PROGRAM_ID = (process.env.PUMPFUN_PROGRAM_ID || '').trim();
+const PUMPFUN_PROGRAM_ID  = (process.env.PUMPFUN_PROGRAM_ID || '').trim() || null;
 
-const MIN_LIQ_SOL = parseFloat(process.env.MIN_LIQ_SOL) || 5;
-const MIN_VOL_USD = parseFloat(process.env.MIN_VOL_USD) || 5000;
-const SIMULATED_AMOUNT_SOL = parseFloat(process.env.SIMULATED_AMOUNT_SOL) || 0.001;
+const SIMULATED_AMOUNT_SOL = Number(process.env.SIMULATED_AMOUNT_SOL || '0.001');
+const SIM_SPREAD_BPS       = Number(process.env.SIM_SPREAD_BPS || '100'); // 1% RT
+const SLIPPAGE_BPS         = Number(process.env.SLIPPAGE_BPS || '150');   // por si quieres usarlo
+const MIN_LIQ_USD          = Number(process.env.MIN_LIQ_USD || '8000');
+const MIN_VOL_USD          = Number(process.env.MIN_VOL_USD || '5000');
 
-// Sim engine
-const SIM_ENGINE = (process.env.SIM_ENGINE || 'spread').toLowerCase(); // 'spread' | 'jupiter'
-const SIM_WAIT_MS = parseInt(process.env.SIM_WAIT_MS || '0', 10);
-const JUPITER_BASE = process.env.JUPITER_BASE || 'https://quote-api.jup.ag';
-const SLIPPAGE_BPS = parseInt(process.env.SLIPPAGE_BPS || '150', 10);
+const MAX_MARKET_PROBES    = Number(process.env.MAX_MARKET_PROBES || '8'); // candidatos por tx
 
-// Limitar trabajo por transacción (para no saturar APIs)
-const MAX_CANDIDATES_PER_TX = 5;
-// Limitar concurrencia global de llamadas HTTP (anti ENOBUFS)
-const MAX_CONCURRENT_HTTP = parseInt(process.env.MAX_CONCURRENT_HTTP || '2', 10);
+// Opcional Birdeye (si algún día pones API key)
+const BIRDEYE_KEY          = (process.env.BIRDEYE_KEY || '').trim();
 
-// ===================== HTTP AGENT (keep-alive) =====================
-const httpsAgent = new https.Agent({
-  keepAlive: true,
-  maxSockets: Math.max(4, MAX_CONCURRENT_HTTP),
-  maxFreeSockets: Math.max(2, Math.floor(MAX_CONCURRENT_HTTP / 2)),
-  timeout: 15_000
-});
-const ax = axios.create({ httpsAgent, timeout: 10_000 });
+// CSV de resultados de simulación
+const CSV_PATH = 'simulation_results.csv';
+ensureCsv(); // ← deja esta llamada si ensureCsv es una function-declaration (ver abajo)
 
-// ===================== CSV =====================
-const csvWriter = createObjectCsvWriter({
-  path: path.join(process.cwd(), 'simulation_results.csv'),
-  header: [
-    { id: 'timestamp', title: 'Timestamp' },
-    { id: 'source', title: 'Source' },
-    { id: 'subscriptionId', title: 'SubId' },
-    { id: 'signature', title: 'Signature' },
-    { id: 'mint', title: 'Token Mint' },
-    { id: 'buyPrice', title: 'Buy Price (USD)' },
-    { id: 'sellPrice', title: 'Sell Price (USD)' },
-    { id: 'pnlPerc', title: 'PnL %' },
-    { id: 'pnlSol', title: 'PnL SOL' },
-    { id: 'liqUsd', title: 'Liquidity USD' },
-    { id: 'liqSol', title: 'Liquidity SOL' },
-    { id: 'volUsd', title: 'Volume 24h USD' },
-  ],
-  append: true
-});
-
-// ===================== BLOQUEOS / HEURÍSTICAS =====================
-// Programas/sysvars muy frecuentes en logs que NO son mints
+// ================== BLOCKLIST BASE ==================
 const BLOCKLIST = new Set([
-  // System / runtime
-  '11111111111111111111111111111111', // System Program
-  'ComputeBudget111111111111111111111111111111',
-  'BPFLoaderUpgradeab1e11111111111111111111111',
-  'AddressLookupTab1e111111111111111111111111',
-  'SysvarC1ock11111111111111111111111111111111',
-  'SysvarRent111111111111111111111111111111111',
-  'Sysvar1nstructions1111111111111111111111',
+  // Raydium programs (a los que te suscribes; NO son mints)
+  'CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C',
+  '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8',
+  '5quBtoiQqxF9Jv6KYKctB59NT3gtJD2Y65kdnB1Uev3h',
+  'CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK',
 
-  // SPL Token stack
-  'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA', // SPL Token
-  'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL', // Associated Token
-  'MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr', // Memo
-  'KeccakSecp256k11111111111111111111111111111',
-  'Stake11111111111111111111111111111111111111',
-  'Vote111111111111111111111111111111111111111',
+  // Pump.fun
+  '6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P',
 
-  // IMPORTANTE: ignora WSOL como mint objetivo
-  'So11111111111111111111111111111111111111112',
+  // Jupiter
+  'JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4',
+  'JUPXyUidBdSfAMVcG5yubXmcPXMq3bJmVovfsNmgvd6',
+  'routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS',
+
+  // Orca Whirlpool (router)
+  'whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc',
+
+  // Programas SPL / utilidades / cuentas comunes
+  'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb', // Token-2022
+  'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo',  // Memo v2
+
+  // Otras cuentas muy frecuentes en swaps y que NO son mints
+  'SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe',
+  // Programas base que salen en casi todas las tx (NO son mints)
+'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA', // SPL Token
+'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL', // Associated Token
+'MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr',  // Memo v1
+'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo',  // Memo v2
+'11111111111111111111111111111111',             // System Program
+'ComputeBudget111111111111111111111111111111',  // Compute Budget
+
+// Routers / agregadores que no son mints
+'BBRouter1cVunVXvkcqeKkZQcBK7ruan37PPm3xzWaXD',
+'whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc',
+
+// Cuentas muy frecuentes en swaps (ruido)
+'DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg',
+'hydHwdP54fiTbJ5QXuKDLZFLY5m8pqx15RSmWcL1yAJ',
+'3s1rAymURnacreXreMy718GfqW6kygQsLNka1xDyW8pC',
+'LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo',
+'King7ki4SKMBPb3iupnQwTyjsq294jaXsgLmJo8cb7T',
+'ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY',
+'3JuLK88xU3gbiHvwd12mGdYC6iVNSfZkFtsyiY2yeZrZ',
+'bank7GaK8LkjyrLpSZjGuXL8z7yae6JqbunEEnU9FS4',
+
+// Otras que viste repetirse (no mints)
+'NA247a7YE9S3p9CdKmMyETx8TTwbSdVbVYHHxpnHTUV',
+'Fibo6vWHQLVqh6ci5BbdPrNR29q2qesJqiSEbR99y8L9',
+'FoaFt2Dtz58RA6DPjbRb9t9z8sLJRChiGFTv21EfaseZ',
+'4x2e73ZsMJbfk1nzwkJnkAAWDxCgxnQrYEmWXyd5nyvG',
+'4zMQA8EqDLc1nkTBgpZErnCy49cQGFvEVmwcsxmVZLUE',
+'MEViEnscUm6tsQRoGd9h6nLQaQspKj7DB2M5FwM3Xvz',
+
 ]);
 
-function isProbablyMint(pubkey) {
-  // Heurística suave para reducir ruido:
-  // - Longitud mínima 36 (evita muchas cuentas core de 32)
-  // - No estar en la blocklist
-  return pubkey.length >= 36 && !BLOCKLIST.has(pubkey);
+// Añadir dinámicamente programas que vienen del .env
+RAYDIUM_PROGRAM_IDS.forEach(k => BLOCKLIST.add(k));
+if (PUMPFUN_PROGRAM_ID) BLOCKLIST.add(PUMPFUN_PROGRAM_ID);
+
+// ================== UTILS ==================
+const uniq = (arr) => [...new Set(arr)];
+
+function ensureCsv() {
+  if (!fs.existsSync(CSV_PATH)) {
+    fs.writeFileSync(
+      CSV_PATH,
+      'timestamp,source,signature,mint,buyPrice,sellPrice,pnlPerc,pnlSol,liqUsd,liqSol,volUsd\n',
+      'utf8'
+    );
+  }
 }
 
-function uniq(arr) { return [...new Set(arr)]; }
+function appendCsv(rowObj) {
+  const row = [
+    rowObj.timestamp,
+    rowObj.source,
+    rowObj.signature,
+    rowObj.mint,
+    safeNum(rowObj.buyPrice),
+    safeNum(rowObj.sellPrice),
+    safeNum(rowObj.pnlPerc),
+    safeNum(rowObj.pnlSol),
+    safeNum(rowObj.liqUsd),
+    safeNum(rowObj.liqSol),
+    safeNum(rowObj.volUsd),
+  ].join(',') + '\n';
+  fs.appendFileSync(CSV_PATH, row, 'utf8');
+}
+
+function safeNum(n) {
+  if (n === null || n === undefined || Number.isNaN(Number(n))) return '';
+  return Number(n);
+}
+
+function isNoiseString(s) {
+  // 8 caracteres idénticos consecutivos => casi seguro basura (AAAAAAA…)
+  return /(.)\1{7,}/.test(s);
+}
 
 function extractBase58Candidates(logs) {
-  const text = logs.join(' ');
+  const text = (logs || []).join(' ');
+  // Base58 sin 0,O,I,l y a partir de 32 chars (hasta ~44)
   const re = /[1-9A-HJ-NP-Za-km-z]{32,44}/g;
   const raw = text.match(re) || [];
-  return uniq(raw.filter(isProbablyMint));
+  return uniq(
+    raw
+      .filter(s => s.length >= 36)     // heurística mínima de longitud
+      .filter(s => !isNoiseString(s))  // fuera AAAAAA…
+      .filter(s => !BLOCKLIST.has(s))  // fuera blocklist
+  );
 }
 
-// ===================== CONCURRENCIA HTTP =====================
-let inflight = 0;
-const waiters = [];
-async function runWithLimit(taskFn) {
-  if (inflight >= MAX_CONCURRENT_HTTP) {
-    await new Promise(res => waiters.push(res));
-  }
-  inflight++;
-  try {
-    return await taskFn();
-  } finally {
-    inflight--;
-    const next = waiters.shift();
-    if (next) next();
-  }
+function simulateRoundTrip(price) {
+  // spread simétrico: +spread/2 al comprar, -spread/2 al vender → RT = spread
+  const half = SIM_SPREAD_BPS / 20000; // ej: 100 bps → 0.5% cada lado
+  const buy  = price * (1 + half);
+  const sell = price * (1 - half);
+  const pnlPerc = ((sell - buy) / buy) * 100; // en %
+  const pnlSol  = SIMULATED_AMOUNT_SOL * (pnlPerc / 100);
+  return { buy, sell, pnlPerc, pnlSol };
 }
 
-// ===================== MERCADO =====================
-const WSOL = 'So11111111111111111111111111111111111111112';
-
+// ================== MARKET LOOKUPS ==================
 async function getTokenData(mint) {
+  // 1) Dexscreener (público)
+  const d = await fetchDexscreener(mint);
+  if (d) return d;
+
+  // 2) Birdeye (si tienes API Key)
+  const b = await fetchBirdeye(mint);
+  if (b) return b;
+
+  return null;
+}
+
+async function fetchDexscreener(mint) {
   try {
-    if (BIRDEYE_KEY) {
-      const rsp = await runWithLimit(() =>
-        ax.get(`https://public-api.birdeye.so/public/token/${mint}`, {
-          headers: { 'x-chain': 'solana', 'X-API-KEY': BIRDEYE_KEY }
-        })
-      );
-      const d = rsp?.data?.data;
-      if (!d) return null;
-      return {
-        price: d.price || 0,
-        liqUsd: d.liquidity || 0,
-        // Birdeye no da "liq en SOL" como tal; lo dejamos en 0
-        liqSol: 0,
-        volUsd: d.volume_24h || 0,
-        source: 'Birdeye'
-      };
-    } else {
-      const rsp = await runWithLimit(() =>
-        ax.get(`https://api.dexscreener.com/latest/dex/tokens/${mint}`)
-      );
-      const pair = rsp?.data?.pairs?.[0];
-      if (!pair) return null;
+    const url = `https://api.dexscreener.com/latest/dex/tokens/${mint}`;
+    const { data } = await axios.get(url, { timeout: 7000 });
 
-      // Mapeo correcto de SOL: solo si quote es SOL/WSOL
-      const quoteIsSOL =
-        (pair.quoteToken?.symbol === 'SOL') ||
-        (pair.quoteToken?.address === WSOL);
-
-      const liqSol = quoteIsSOL
-        ? parseFloat(pair.liquidity?.quote) || 0
-        : 0;
-
-      return {
-        price: parseFloat(pair.priceUsd) || 0,
-        liqUsd: parseFloat(pair.liquidity?.usd) || 0,
-        liqSol,
-        volUsd: parseFloat(pair.volume?.h24) || 0,
-        source: 'Dexscreener'
-      };
+    if (!data || !Array.isArray(data.pairs) || data.pairs.length === 0) {
+      return null;
     }
-  } catch {
-    return null; // silencioso: seguimos con otro candidato
-  }
-}
 
-function simulateTradeSpread(priceUsd) {
-  if (!priceUsd || priceUsd <= 0) {
-    return { buyPrice: 0, sellPrice: 0, pnlPerc: 0, pnlSol: 0 };
-  }
-  const buyPrice = priceUsd * (1 + 0.005);   // +0.5% slippage
-  const sellPrice = priceUsd * (1 - 0.005);  // -0.5% spread
-  const pnlPerc = ((sellPrice - buyPrice) / buyPrice) * 100;
-  const pnlSol = ((sellPrice - buyPrice) / priceUsd) * SIMULATED_AMOUNT_SOL;
-  return { buyPrice, sellPrice, pnlPerc, pnlSol };
-}
+    // Elegimos el par con mayor liquidez USD
+    const best = data.pairs
+      .filter(p => Number(p.liquidity?.usd) > 0 && Number(p.priceUsd) > 0)
+      .sort((a, b) => Number(b.liquidity.usd) - Number(a.liquidity.usd))[0];
 
-// ---------- Jupiter helpers ----------
-const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+    if (!best) return null;
 
-// quote Jupiter v6. amount en átomos del inputMint (lamports si input=WSOL)
-async function jupQuote(inputMint, outputMint, amountAtoms) {
-  const url = `${JUPITER_BASE}/v6/quote?inputMint=${inputMint}&outputMint=${outputMint}&amount=${amountAtoms}&slippageBps=${SLIPPAGE_BPS}&onlyDirectRoutes=false`;
-  const rsp = await runWithLimit(() => ax.get(url));
-  // v6 puede devolver array en data.data; tomamos el primero si es array
-  const d = rsp?.data?.data;
-  const q = Array.isArray(d) ? d[0] : d;
-  if (!q?.outAmount) return null;
-  return {
-    outAmount: BigInt(q.outAmount),           // salida en átomos del outputMint
-    priceImpactPct: Number(q.priceImpactPct ?? 0)
-  };
-}
-
-// Round-trip SOL->mint->SOL con espera opcional entre quotes
-async function simulateRoundTripJupiter(mint) {
-  try {
-    const lamportsIn = BigInt(Math.round(SIMULATED_AMOUNT_SOL * 1e9));
-
-    // 1) SOL -> mint
-    const q1 = await jupQuote(WSOL, mint, lamportsIn);
-    if (!q1) return null;
-
-    // Espera opcional para capturar movimiento
-    if (SIM_WAIT_MS > 0) await sleep(SIM_WAIT_MS);
-
-    // 2) mint -> SOL (usamos todo lo que "compramos" en q1)
-    const q2 = await jupQuote(mint, WSOL, q1.outAmount);
-    if (!q2) return null;
-
-    const lamportsOut = q2.outAmount;
-    const pnlLamports = Number(lamportsOut - lamportsIn); // puede ser negativo/positivo
-    const pnlSol = pnlLamports / 1e9;
-    const pnlPerc = (pnlSol / SIMULATED_AMOUNT_SOL) * 100;
-
-    return { pnlSol, pnlPerc };
+    return {
+      source: 'Dexscreener',
+      price: Number(best.priceUsd),                   // USD
+      liqUsd: Number(best.liquidity?.usd || 0),
+      liqSol: Number(best.liquidity?.base || 0),      // no siempre es SOL, pero orienta
+      volUsd: Number(best.volume?.h24 || 0),          // 24h
+    };
   } catch {
     return null;
   }
 }
-// ------------------------------------
 
-// ===================== WS LISTENER =====================
-let ws;
-const subIdToSource = new Map();    // subId (del nodo) -> etiqueta
-const pendingIdToLabel = new Map(); // id que enviamos -> etiqueta
-const seenSignatures = new Set();   // de-dup para no repetir mismo tx
+async function fetchBirdeye(mint) {
+  if (!BIRDEYE_KEY) return null;
+  try {
+    // Precio (USD)
+    const p = await axios.get(
+      `https://public-api.birdeye.so/defi/price?chain=solana&address=${mint}`,
+      { headers: { 'X-API-KEY': BIRDEYE_KEY }, timeout: 6000 }
+    );
+    const price = Number(p?.data?.data?.value || 0);
+    if (!price) return null;
 
-const wantedPrograms = [
-  ...RAYDIUM_PROGRAM_IDS.map(x => ({ pubkey: x, label: 'Raydium' })),
-  ...(PUMPFUN_PROGRAM_ID ? [{ pubkey: PUMPFUN_PROGRAM_ID, label: 'Pump.fun' }] : [])
-];
-
-function connect() {
-  console.log(`🚀 Conectando WS: ${WS_URL}`);
-  ws = new WebSocket(WS_URL);
-
-  ws.on('open', async () => {
-    console.log('✅ WS abierto. Creando suscripciones por programa...');
-    // Mantener vivo
-    setInterval(() => { if (ws?.readyState === WebSocket.OPEN) ws.ping(); }, 15000);
-
-    // Suscribir por programa con "mentions" (sin ALL para reducir ruido)
-    let nextId = 2000;
-    for (const { pubkey, label } of wantedPrograms) {
-      const id = nextId++;
-      pendingIdToLabel.set(id, label);
-      const payload = {
-        jsonrpc: '2.0',
-        id,
-        method: 'logsSubscribe',
-        params: [ { mentions: [pubkey] }, { commitment: 'processed' } ]
-      };
-      ws.send(JSON.stringify(payload));
-      console.log(`📨 Enviada sub ${id} → ${label} (${pubkey})`);
-    }
-  });
-
-  ws.on('message', async (raw) => {
-    let msg;
-    try { msg = JSON.parse(raw); } catch { return; }
-
-    // Confirmaciones de suscripción
-    if (msg.id && Number.isInteger(msg.result)) {
-      const sentId = msg.id;
-      const label = pendingIdToLabel.get(sentId) || 'Unknown';
-      subIdToSource.set(msg.result, label);
-      pendingIdToLabel.delete(sentId);
-      console.log(`✅ Sub confirmada. sentId=${sentId} → subId=${msg.result} [${label}]`);
-      return;
-    }
-
-    // Errores del nodo
-    if (msg.error) {
-      console.log('❌ Error WS:', msg.error);
-      return;
-    }
-
-    // Notificaciones de logs
-    if (msg.method === 'logsNotification') {
-      const sub = msg.params?.subscription;
-      const val = msg.params?.result?.value;
-      if (!val) return;
-
-      const sourceLabel = subIdToSource.get(sub) || 'Unknown';
-      const { signature, logs } = val;
-
-      // de-dup: misma tx puede salir por varias subs
-      if (seenSignatures.has(signature)) return;
-      seenSignatures.add(signature);
-      if (seenSignatures.size > 50000) seenSignatures.clear();
-
-      // Candidatos de mint “depurados”
-      const candidates = extractBase58Candidates(logs).slice(0, MAX_CANDIDATES_PER_TX);
-      if (!candidates.length) return;
-
-      // Mercado: probar candidatos hasta encontrar uno válido
-      let chosenMint = null, market = null;
-      for (const c of candidates) {
-        const m = await getTokenData(c);
-        if (m && m.price > 0) { chosenMint = c; market = m; break; }
-      }
-      if (!chosenMint || !market) return;
-
-      const { price, liqUsd, liqSol, volUsd, source: marketSrc } = market;
-
-      // --- Simulación ---
-      let buyPrice, sellPrice, pnlPerc, pnlSol;
-
-        if (SIM_ENGINE === 'jupiter') {
-            const rt = await simulateRoundTripJupiter(chosenMint);
-            if (!rt) {
-                console.log(`ℹ️ Jupiter sin ruta para ${chosenMint}. Fallback a spread.`);
-                ({ buyPrice, sellPrice, pnlPerc, pnlSol } = simulateTradeSpread(price));
-            } else {
-        ({ pnlSol, pnlPerc } = rt);
-        buyPrice = price;
-        let priceAfter = price;
-        if (SIM_WAIT_MS > 0) {
-        const m2 = await getTokenData(chosenMint);
-        if (m2?.price) priceAfter = m2.price;
-        }
-        sellPrice = priceAfter;
-    }
-    } else {
-    ({ buyPrice, sellPrice, pnlPerc, pnlSol } = simulateTradeSpread(price));
-    }
-
-      const row = {
-        timestamp: new Date().toISOString(),
-        source: `${sourceLabel}/${marketSrc}`,
-        subscriptionId: sub,
-        signature,
-        mint: chosenMint,
-        buyPrice,
-        sellPrice,
-        pnlPerc,
-        pnlSol,
-        liqUsd,
-        liqSol,
-        volUsd
-      };
-
-      console.log('🎯 SIM (válido):', row);
-
-      // (Opcional) Filtro real antes de guardar
-      // if (liqSol < MIN_LIQ_SOL || volUsd < MIN_VOL_USD) return;
-
-      await csvWriter.writeRecords([row]);
-      return;
-    }
-  });
-
-  ws.on('error', (e) => {
-    console.log('❌ WS error:', e?.message || e);
-  });
-
-  ws.on('close', (code, reason) => {
-    console.log('⚠️ WS cerrado:', code, reason?.toString());
-    setTimeout(connect, 3000); // reconexión con backoff simple
-  });
+    // Liquidez/volumen aproximados (si quieres puedes ampliar con endpoints de pools)
+    // Aquí lo dejamos mínimo con precio; si quieres reforzar, añadimos más endpoints.
+    return {
+      source: 'Birdeye',
+      price,
+      liqUsd: 0,
+      liqSol: 0,
+      volUsd: 0,
+    };
+  } catch {
+    return null;
+  }
 }
 
-connect();
+// ================== WS ==================
+const ws = new WebSocket(WS_URL);
+
+const pendingSubs = new Map();  // sentId -> label
+const subLabels   = new Map();  // subId  -> label
+
+let nextId = 2000;
+
+ws.on('open', () => {
+  console.log(`🚀 Conectando WS: ${WS_URL}`);
+  console.log('✅ WS abierto. Creando suscripciones por programa...');
+
+  // Raydium
+  for (const pid of RAYDIUM_PROGRAM_IDS) {
+    const id = nextId++;
+    pendingSubs.set(id, 'Raydium');
+    sendLogsSubByProgram(id, pid);
+  }
+
+  // Pump.fun
+  if (PUMPFUN_PROGRAM_ID) {
+    const id = nextId++;
+    pendingSubs.set(id, 'Pump.fun');
+    sendLogsSubByProgram(id, PUMPFUN_PROGRAM_ID);
+  }
+
+  // (Opcional) Suscripción ALL si quieres telemetría general
+  // const idAll = nextId++;
+  // pendingSubs.set(idAll, 'ALL');
+  // sendLogsSubAll(idAll);
+});
+
+ws.on('message', async (raw) => {
+  let msg;
+  try { msg = JSON.parse(raw); } catch { return; }
+
+  // Confirmación de suscripciones
+  if (msg.id && pendingSubs.has(msg.id) && msg.result) {
+    const label = pendingSubs.get(msg.id);
+    pendingSubs.delete(msg.id);
+    const subId = msg.result;
+    subLabels.set(subId, label);
+    console.log(`✅ Sub confirmada. sentId=${msg.id} → subId=${subId} [${label}]`);
+    return;
+  }
+
+  // Notificaciones de logs
+  if (msg.method === 'logsNotification') {
+    const { result } = msg.params || {};
+    const { value }  = result || {};
+    const subId      = result?.subscription;
+    const label      = subLabels.get(subId) || 'Unknown';
+
+    const signature  = value?.signature?.slice(0, 12) + '…';
+    const logs       = value?.logs || [];
+
+    // Extraer candidatos (posibles mints)
+    const candidates = extractBase58Candidates(logs);
+    if (candidates.length === 0) return;
+
+    if (!ONLY_HITS && label !== 'Unknown') {
+        console.log(`🧪 candidatos=${candidates.length} (${candidates.join(',')})`);
+        console.log(`🔎 ${label} tx=${signature} logs=${logs.length}`);
+}
+
+    // Consultar mercado para cada candidato (hasta MAX_MARKET_PROBES)
+    let chosenMint = null;
+    let market     = null;
+
+    for (const c of candidates.slice(0, MAX_MARKET_PROBES)) {
+      const m = await getTokenData(c);
+
+      if (DEBUG_MARKET) {
+        console.log(m
+          ? `🟢 market HIT: ${c} → $${m.price} liqUsd=${m.liqUsd}`
+          : `⚪ market MISS: ${c}`
+        );
+      }
+
+      if (m && m.price > 0) {
+        // Aplica filtros mínimos
+        const liqOk = m.liqUsd === 0 ? true : (m.liqUsd >= MIN_LIQ_USD);
+        const volOk = m.volUsd === 0 ? true : (m.volUsd >= MIN_VOL_USD);
+        if (!liqOk || !volOk) {
+          if (DEBUG_MARKET) {
+            console.log(`⏭️ market HIT pero bajo filtros → liqUsd=${m.liqUsd} volUsd=${m.volUsd}`);
+          }
+          continue;
+        }
+
+        chosenMint = c;
+        market     = m;
+        break;
+      }
+    }
+
+    if (!chosenMint || !market) return;
+
+    // Simulación redonda con spread
+    const { buy, sell, pnlPerc, pnlSol } = simulateRoundTrip(market.price);
+
+    const out = {
+      timestamp: new Date().toISOString(),
+      source: `${label}/${market.source}`,
+      signature: value?.signature || '',
+      mint: chosenMint,
+      buyPrice: buy,
+      sellPrice: sell,
+      pnlPerc,
+      pnlSol,
+      liqUsd: market.liqUsd,
+      liqSol: market.liqSol,
+      volUsd: market.volUsd,
+    };
+
+    console.log('🎯 SIM (válido):', out);
+    appendCsv(out);
+  }
+});
+
+ws.on('error', (err) => {
+  console.error('❌ WS error:', err.message || err);
+});
+
+ws.on('close', (code, reason) => {
+  console.log(`⚠️ WS cerrado: ${code} ${reason ? reason.toString() : ''}`);
+  // Reintento sencillo
+  setTimeout(() => {
+    console.log('🚀 Conectando WS:', WS_URL);
+    reconnect();
+  }, 1500);
+});
+
+function reconnect() {
+  // Nota: script sencillo; para producción, abstrae el socket y re-crea listeners.
+  process.exit(0); // que tu PM2 / npm script lo relance, o vuelve a ejecutar manualmente
+}
+
+function sendLogsSubByProgram(id, programId) {
+  const payload = {
+    jsonrpc: '2.0',
+    id,
+    method: 'logsSubscribe',
+    params: [
+      { mentions: [programId] },
+      { commitment: 'processed' }
+    ]
+  };
+  ws.send(JSON.stringify(payload));
+  console.log(`📨 Enviada sub ${id} → ${programId.includes('6EF8r') ? 'Pump.fun' : 'Raydium'} (${programId})`);
+}
+
+function sendLogsSubAll(id) {
+  const payload = {
+    jsonrpc: '2.0',
+    id,
+    method: 'logsSubscribe',
+    params: [
+      { filter: 'all' },
+      { commitment: 'processed' }
+    ]
+  };
+  ws.send(JSON.stringify(payload));
+  console.log(`📨 Enviada sub ${id} → ALL`);
+}
