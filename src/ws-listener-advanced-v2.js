@@ -308,22 +308,24 @@ function connect() {
       // --- Simulación ---
       let buyPrice, sellPrice, pnlPerc, pnlSol;
 
-      if (SIM_ENGINE === 'jupiter') {
-        const rt = await simulateRoundTripJupiter(chosenMint);
-        if (!rt) return; // si Jupiter falla esta vez, pasamos
+        if (SIM_ENGINE === 'jupiter') {
+            const rt = await simulateRoundTripJupiter(chosenMint);
+            if (!rt) {
+                console.log(`ℹ️ Jupiter sin ruta para ${chosenMint}. Fallback a spread.`);
+                ({ buyPrice, sellPrice, pnlPerc, pnlSol } = simulateTradeSpread(price));
+            } else {
         ({ pnlSol, pnlPerc } = rt);
-
-        // buy/sell "informativos" (precio spot); si hay espera, refrescamos venta
         buyPrice = price;
         let priceAfter = price;
         if (SIM_WAIT_MS > 0) {
-          const m2 = await getTokenData(chosenMint);
-          if (m2?.price) priceAfter = m2.price;
+        const m2 = await getTokenData(chosenMint);
+        if (m2?.price) priceAfter = m2.price;
         }
         sellPrice = priceAfter;
-      } else {
-        ({ buyPrice, sellPrice, pnlPerc, pnlSol } = simulateTradeSpread(price));
-      }
+    }
+    } else {
+    ({ buyPrice, sellPrice, pnlPerc, pnlSol } = simulateTradeSpread(price));
+    }
 
       const row = {
         timestamp: new Date().toISOString(),
