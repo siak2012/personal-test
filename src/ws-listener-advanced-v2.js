@@ -1,400 +1,343 @@
-function ensureCsv() {
-  if (!fs.existsSync(CSV_PATH)) {
-    fs.writeFileSync(
-      CSV_PATH,
-      'timestamp,source,subscriptionId,signature,mint,buyPrice,sellPrice,pnlPerc,pnlSol,liqUsd,liqSol,volUsd\n'
-    );
-  }
-}
-
-// ws-listener-advanced-v2.js
-// Listener WS con filtros + blocklist + trazas HIT/MISS + simulación básica
+// src/ws-listener-advanced-v2.js
+// WS listener con filtros + blocklist/allowlist + dedupe + trazas HIT/MISS + simulación simple
 
 import 'dotenv/config';
 import WebSocket from 'ws';
 import axios from 'axios';
 import fs from 'fs';
-
-const ONLY_HITS     = process.env.ONLY_HITS === '1';
-const DEBUG_MARKET  = process.env.DEBUG_MARKET === '1';
+import path from 'path';
 
 // ================== ENV & CONFIG ==================
 const WS_URL = process.env.RPC_URL_WS || 'wss://api.mainnet-beta.solana.com';
 
-const RAYDIUM_PROGRAM_IDS = (process.env.RAYDIUM_PROGRAM_IDS || '')
+// Defaults de Raydium (si no pones nada en .env)
+const RAYDIUM_DEFAULT = [
+  'CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C', // AMM CPMM
+  '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8', // AMM V4
+  '5quBtoiQqxF9Jv6KYKctB59NT3gtJD2Y65kdnB1Uev3h', // CLMM helper
+  'CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK'  // Router
+];
+
+const RAYDIUM_PROGRAM_IDS = (process.env.RAYDIUM_PROGRAM_IDS || RAYDIUM_DEFAULT.join(','))
   .split(',')
   .map(s => s.trim())
   .filter(Boolean);
 
-const PUMPFUN_PROGRAM_ID  = (process.env.PUMPFUN_PROGRAM_ID || '').trim() || null;
+const PUMPFUN_PROGRAM_ID = (process.env.PUMPFUN_PROGRAM_ID || '6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P').trim();
 
+const ONLY_HITS            = process.env.ONLY_HITS === '1';   // solo imprime si pasa filtros
+const DEBUG_MARKET         = process.env.DEBUG_MARKET === '1';
+const MAX_MARKET_PROBES    = Number(process.env.MAX_MARKET_PROBES || '8');   // candidatos por tx
 const SIMULATED_AMOUNT_SOL = Number(process.env.SIMULATED_AMOUNT_SOL || '0.001');
-const SIM_SPREAD_BPS       = Number(process.env.SIM_SPREAD_BPS || '100'); // 1% RT
-const SLIPPAGE_BPS         = Number(process.env.SLIPPAGE_BPS || '150');   // por si quieres usarlo
+const SIM_SPREAD_BPS       = Number(process.env.SIM_SPREAD_BPS || '100');    // 1% RT
+const SLIPPAGE_BPS         = Number(process.env.SLIPPAGE_BPS || '150');      // 1.5% (sim)
 const MIN_LIQ_USD          = Number(process.env.MIN_LIQ_USD || '8000');
 const MIN_VOL_USD          = Number(process.env.MIN_VOL_USD || '5000');
+const BIRDEYE_KEY          = (process.env.BIRDEYE_KEY || '').trim(); // opcional
 
-const MAX_MARKET_PROBES    = Number(process.env.MAX_MARKET_PROBES || '8'); // candidatos por tx
+// ================== RUTAS & FICHEROS ==================
+const ROOT = process.cwd();
+const CSV_PATH        = path.join(ROOT, 'simulation_results.csv');
+const BLOCKLIST_PATH  = path.join(ROOT, 'blocklist.txt');   // una mint por línea
+const ALLOWLIST_PATH  = path.join(ROOT, 'allowlist.txt');   // opcional: si tiene contenido, solo mints de aquí
 
-// Opcional Birdeye (si algún día pones API key)
-const BIRDEYE_KEY          = (process.env.BIRDEYE_KEY || '').trim();
+ensureFile(BLOCKLIST_PATH, '# una mint por línea\n');
+ensureFile(ALLOWLIST_PATH, '# (opcional) si pones mints aquí, solo se considerarán estas\n');
+ensureCsv();
 
-// CSV de resultados de simulación
-const CSV_PATH = 'simulation_results.csv';
-ensureCsv(); // ← deja esta llamada si ensureCsv es una function-declaration (ver abajo)
+// Carga listas
+function loadList(fp) {
+  try {
+    const raw = fs.readFileSync(fp, 'utf8');
+    return new Set(raw
+      .split(/\r?\n/)
+      .map(l => l.split('#')[0].trim())
+      .filter(Boolean));
+  } catch {
+    return new Set();
+  }
+}
 
-// ================== BLOCKLIST BASE ==================
-const BLOCKLIST = new Set([
-  // Raydium programs (a los que te suscribes; NO son mints)
-  'CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C',
-  '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8',
-  '5quBtoiQqxF9Jv6KYKctB59NT3gtJD2Y65kdnB1Uev3h',
-  'CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK',
+let BLOCKLIST = loadList(BLOCKLIST_PATH);
+let ALLOWLIST = loadList(ALLOWLIST_PATH);
 
-  // Pump.fun
-  '6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P',
+// (re)cargar si cambian
+fs.watch(BLOCKLIST_PATH, { persistent: false }, () => BLOCKLIST = loadList(BLOCKLIST_PATH));
+fs.watch(ALLOWLIST_PATH,  { persistent: false }, () => ALLOWLIST = loadList(ALLOWLIST_PATH));
 
-  // Jupiter
-  'JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4',
-  'JUPXyUidBdSfAMVcG5yubXmcPXMq3bJmVovfsNmgvd6',
-  'routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS',
-
-  // Orca Whirlpool (router)
-  'whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc',
-
-  // Programas SPL / utilidades / cuentas comunes
-  'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb', // Token-2022
-  'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo',  // Memo v2
-
-  // Otras cuentas muy frecuentes en swaps y que NO son mints
-  'SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe',
-  // Programas base que salen en casi todas las tx (NO son mints)
-'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA', // SPL Token
-'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL', // Associated Token
-'MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr',  // Memo v1
-'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo',  // Memo v2
-'11111111111111111111111111111111',             // System Program
-'ComputeBudget111111111111111111111111111111',  // Compute Budget
-
-// Routers / agregadores que no son mints
-'BBRouter1cVunVXvkcqeKkZQcBK7ruan37PPm3xzWaXD',
-'whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc',
-
-// Cuentas muy frecuentes en swaps (ruido)
-'DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg',
-'hydHwdP54fiTbJ5QXuKDLZFLY5m8pqx15RSmWcL1yAJ',
-'3s1rAymURnacreXreMy718GfqW6kygQsLNka1xDyW8pC',
-'LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo',
-'King7ki4SKMBPb3iupnQwTyjsq294jaXsgLmJo8cb7T',
-'ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY',
-'3JuLK88xU3gbiHvwd12mGdYC6iVNSfZkFtsyiY2yeZrZ',
-'bank7GaK8LkjyrLpSZjGuXL8z7yae6JqbunEEnU9FS4',
-
-// Otras que viste repetirse (no mints)
-'NA247a7YE9S3p9CdKmMyETx8TTwbSdVbVYHHxpnHTUV',
-'Fibo6vWHQLVqh6ci5BbdPrNR29q2qesJqiSEbR99y8L9',
-'FoaFt2Dtz58RA6DPjbRb9t9z8sLJRChiGFTv21EfaseZ',
-'4x2e73ZsMJbfk1nzwkJnkAAWDxCgxnQrYEmWXyd5nyvG',
-'4zMQA8EqDLc1nkTBgpZErnCy49cQGFvEVmwcsxmVZLUE',
-'MEViEnscUm6tsQRoGd9h6nLQaQspKj7DB2M5FwM3Xvz',
-
-]);
-
-// Añadir dinámicamente programas que vienen del .env
-RAYDIUM_PROGRAM_IDS.forEach(k => BLOCKLIST.add(k));
-if (PUMPFUN_PROGRAM_ID) BLOCKLIST.add(PUMPFUN_PROGRAM_ID);
-
-// ================== UTILS ==================
-const uniq = (arr) => [...new Set(arr)];
-
+// ================== CSV ==================
 function ensureCsv() {
   if (!fs.existsSync(CSV_PATH)) {
     fs.writeFileSync(
       CSV_PATH,
-      'timestamp,source,signature,mint,buyPrice,sellPrice,pnlPerc,pnlSol,liqUsd,liqSol,volUsd\n',
+      'timestamp,source,signature,mint,buyPrice,sellPrice,pnlPerc,pnlSol,liqUsd,volUsd\n',
       'utf8'
     );
   }
 }
 
-function appendCsv(rowObj) {
-  const row = [
-    rowObj.timestamp,
-    rowObj.source,
-    rowObj.signature,
-    rowObj.mint,
-    safeNum(rowObj.buyPrice),
-    safeNum(rowObj.sellPrice),
-    safeNum(rowObj.pnlPerc),
-    safeNum(rowObj.pnlSol),
-    safeNum(rowObj.liqUsd),
-    safeNum(rowObj.liqSol),
-    safeNum(rowObj.volUsd),
+function appendCsv(row) {
+  const {
+    timestamp, source, signature, mint,
+    buyPrice, sellPrice, pnlPerc, pnlSol,
+    liqUsd, volUsd
+  } = row;
+  const line = [
+    timestamp, source, signature, mint,
+    buyPrice, sellPrice, pnlPerc, pnlSol,
+    liqUsd, volUsd
   ].join(',') + '\n';
-  fs.appendFileSync(CSV_PATH, row, 'utf8');
+  fs.appendFile(CSV_PATH, line, () => {});
 }
 
-function safeNum(n) {
-  if (n === null || n === undefined || Number.isNaN(Number(n))) return '';
-  return Number(n);
-}
-
-function isNoiseString(s) {
-  // 8 caracteres idénticos consecutivos => casi seguro basura (AAAAAAA…)
-  return /(.)\1{7,}/.test(s);
-}
-
-function extractBase58Candidates(logs) {
-  const text = (logs || []).join(' ');
-  // Base58 sin 0,O,I,l y a partir de 32 chars (hasta ~44)
-  const re = /[1-9A-HJ-NP-Za-km-z]{32,44}/g;
-  const raw = text.match(re) || [];
-  return uniq(
-    raw
-      .filter(s => s.length >= 36)     // heurística mínima de longitud
-      .filter(s => !isNoiseString(s))  // fuera AAAAAA…
-      .filter(s => !BLOCKLIST.has(s))  // fuera blocklist
-  );
-}
-
-function simulateRoundTrip(price) {
-  // spread simétrico: +spread/2 al comprar, -spread/2 al vender → RT = spread
-  const half = SIM_SPREAD_BPS / 20000; // ej: 100 bps → 0.5% cada lado
-  const buy  = price * (1 + half);
-  const sell = price * (1 - half);
-  const pnlPerc = ((sell - buy) / buy) * 100; // en %
-  const pnlSol  = SIMULATED_AMOUNT_SOL * (pnlPerc / 100);
-  return { buy, sell, pnlPerc, pnlSol };
-}
-
-// ================== MARKET LOOKUPS ==================
-async function getTokenData(mint) {
-  // 1) Dexscreener (público)
-  const d = await fetchDexscreener(mint);
-  if (d) return d;
-
-  // 2) Birdeye (si tienes API Key)
-  const b = await fetchBirdeye(mint);
-  if (b) return b;
-
-  return null;
-}
-
-async function fetchDexscreener(mint) {
+// ================== UTILES ==================
+function ensureFile(fp, defaultContent = '') {
   try {
-    const url = `https://api.dexscreener.com/latest/dex/tokens/${mint}`;
-    const { data } = await axios.get(url, { timeout: 7000 });
+    if (!fs.existsSync(fp)) fs.writeFileSync(fp, defaultContent, 'utf8');
+  } catch (e) {
+    console.error('⚠️ No se pudo crear', fp, e.message);
+  }
+}
 
-    if (!data || !Array.isArray(data.pairs) || data.pairs.length === 0) {
-      return null;
+const BASE58_RE = /[1-9A-HJ-NP-Za-km-z]{32,44}/g;
+
+// cuentas que ignoramos siempre (programas comunes)
+const IGNORE_ACCOUNTS = new Set([
+  '11111111111111111111111111111111', // System
+  'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA', // SPL Token
+  'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL', // Associated Token
+  'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo', // Memo
+  ...RAYDIUM_PROGRAM_IDS,
+  PUMPFUN_PROGRAM_ID,
+]);
+
+function nowIso() { return new Date().toISOString(); }
+
+// dedupe: por firma y mint
+const seenSigMint = new Set();           // `${signature}:${mint}`
+const seenSignature = new Set();         // firma sola (para spam)
+const cooldownMint = new Map();          // mint -> ts (evitar hammering de API)
+const MINT_COOLDOWN_MS = 30_000;
+
+// simple cola para no pasar de X requests simultáneas a Dexscreener
+let activeRequests = 0;
+const MAX_CONCURRENCY = 3;
+const queue = [];
+async function runQueued(task) {
+  return new Promise((resolve, reject) => {
+    queue.push({ task, resolve, reject });
+    pumpQueue();
+  });
+}
+function pumpQueue() {
+  if (activeRequests >= MAX_CONCURRENCY) return;
+  const next = queue.shift();
+  if (!next) return;
+  activeRequests++;
+  next.task()
+    .then(res => next.resolve(res))
+    .catch(err => next.reject(err))
+    .finally(() => {
+      activeRequests--;
+      pumpQueue();
+    });
+}
+
+// ================== WS & SUBS ==================
+let ws;
+let nextId = 2000;
+const sentIdToLabel = new Map(); // sent id -> label (Raydium/Pump.fun)
+const subIdToLabel  = new Map(); // sub id -> label
+
+function connect() {
+  console.log(`🚀 Conectando WS: ${WS_URL}`);
+  ws = new WebSocket(WS_URL);
+
+  const pingIntervalMs = 25_000;
+  let heartbeat;
+
+  ws.on('open', () => {
+    console.log('✅ WS abierto. Creando suscripciones por programa...');
+    // Raydium
+    for (const pid of RAYDIUM_PROGRAM_IDS) {
+      const id = nextId++;
+      sentIdToLabel.set(id, 'Raydium');
+      ws.send(JSON.stringify({
+        jsonrpc: '2.0',
+        id,
+        method: 'logsSubscribe',
+        params: [{ mentions: [pid] }, { commitment: 'finalized' }]
+      }));
+      console.log(`📨 Enviada sub ${id} → Raydium (${pid})`);
+    }
+    // Pump.fun
+    if (PUMPFUN_PROGRAM_ID) {
+      const id = nextId++;
+      sentIdToLabel.set(id, 'Pump.fun');
+      ws.send(JSON.stringify({
+        jsonrpc: '2.0',
+        id,
+        method: 'logsSubscribe',
+        params: [{ mentions: [PUMPFUN_PROGRAM_ID] }, { commitment: 'finalized' }]
+      }));
+      console.log(`📨 Enviada sub ${id} → Pump.fun (${PUMPFUN_PROGRAM_ID})`);
     }
 
-    // Elegimos el par con mayor liquidez USD
-    const best = data.pairs
-      .filter(p => Number(p.liquidity?.usd) > 0 && Number(p.priceUsd) > 0)
-      .sort((a, b) => Number(b.liquidity.usd) - Number(a.liquidity.usd))[0];
+    heartbeat = setInterval(() => {
+      try { ws.ping?.(); } catch {}
+    }, pingIntervalMs);
+  });
 
-    if (!best) return null;
+  ws.on('message', onMessage);
 
-    return {
-      source: 'Dexscreener',
-      price: Number(best.priceUsd),                   // USD
-      liqUsd: Number(best.liquidity?.usd || 0),
-      liqSol: Number(best.liquidity?.base || 0),      // no siempre es SOL, pero orienta
-      volUsd: Number(best.volume?.h24 || 0),          // 24h
-    };
-  } catch {
-    return null;
-  }
+  ws.on('close', () => {
+    console.log('⚠️ WS cerrado. Reintentando en 2s…');
+    clearInterval(heartbeat);
+    setTimeout(connect, 2000);
+  });
+
+  ws.on('error', (err) => {
+    console.log('⚠️ WS error:', err.message);
+  });
 }
 
-async function fetchBirdeye(mint) {
-  if (!BIRDEYE_KEY) return null;
-  try {
-    // Precio (USD)
-    const p = await axios.get(
-      `https://public-api.birdeye.so/defi/price?chain=solana&address=${mint}`,
-      { headers: { 'X-API-KEY': BIRDEYE_KEY }, timeout: 6000 }
-    );
-    const price = Number(p?.data?.data?.value || 0);
-    if (!price) return null;
-
-    // Liquidez/volumen aproximados (si quieres puedes ampliar con endpoints de pools)
-    // Aquí lo dejamos mínimo con precio; si quieres reforzar, añadimos más endpoints.
-    return {
-      source: 'Birdeye',
-      price,
-      liqUsd: 0,
-      liqSol: 0,
-      volUsd: 0,
-    };
-  } catch {
-    return null;
-  }
-}
-
-// ================== WS ==================
-const ws = new WebSocket(WS_URL);
-
-const pendingSubs = new Map();  // sentId -> label
-const subLabels   = new Map();  // subId  -> label
-
-let nextId = 2000;
-
-ws.on('open', () => {
-  console.log(`🚀 Conectando WS: ${WS_URL}`);
-  console.log('✅ WS abierto. Creando suscripciones por programa...');
-
-  // Raydium
-  for (const pid of RAYDIUM_PROGRAM_IDS) {
-    const id = nextId++;
-    pendingSubs.set(id, 'Raydium');
-    sendLogsSubByProgram(id, pid);
-  }
-
-  // Pump.fun
-  if (PUMPFUN_PROGRAM_ID) {
-    const id = nextId++;
-    pendingSubs.set(id, 'Pump.fun');
-    sendLogsSubByProgram(id, PUMPFUN_PROGRAM_ID);
-  }
-
-  // (Opcional) Suscripción ALL si quieres telemetría general
-  // const idAll = nextId++;
-  // pendingSubs.set(idAll, 'ALL');
-  // sendLogsSubAll(idAll);
-});
-
-ws.on('message', async (raw) => {
+function onMessage(buf) {
   let msg;
-  try { msg = JSON.parse(raw); } catch { return; }
+  try { msg = JSON.parse(buf.toString()); } catch { return; }
 
-  // Confirmación de suscripciones
-  if (msg.id && pendingSubs.has(msg.id) && msg.result) {
-    const label = pendingSubs.get(msg.id);
-    pendingSubs.delete(msg.id);
-    const subId = msg.result;
-    subLabels.set(subId, label);
-    console.log(`✅ Sub confirmada. sentId=${msg.id} → subId=${subId} [${label}]`);
+  // confirmación de suscripción
+  if (msg.id && msg.result && typeof msg.result === 'number') {
+    const label = sentIdToLabel.get(msg.id) || 'Unknown';
+    subIdToLabel.set(msg.result, label);
+    console.log(`✅ Sub confirmada. sentId=${msg.id} → subId=${msg.result} [${label}]`);
     return;
   }
 
-  // Notificaciones de logs
-  if (msg.method === 'logsNotification') {
-    const { result } = msg.params || {};
-    const { value }  = result || {};
-    const subId      = result?.subscription;
-    const label      = subLabels.get(subId) || 'Unknown';
+  // notificaciones de logs
+  if (msg.method === 'logsNotification' && msg.params?.result) {
+    const { subscription, value } = msg.params;
+    const label = subIdToLabel.get(subscription) || 'Unknown';
+    const { logs = [], signature } = value || {};
 
-    const signature  = value?.signature?.slice(0, 12) + '…';
-    const logs       = value?.logs || [];
+    if (!signature || seenSignature.has(signature)) return;
+    seenSignature.add(signature);
+    setTimeout(() => seenSignature.delete(signature), 60_000); // dedupe por 60s
 
-    // Extraer candidatos (posibles mints)
-    const candidates = extractBase58Candidates(logs);
-    if (candidates.length === 0) return;
-
-    if (!ONLY_HITS && label !== 'Unknown') {
-        console.log(`🧪 candidatos=${candidates.length} (${candidates.join(',')})`);
-        console.log(`🔎 ${label} tx=${signature} logs=${logs.length}`);
-}
-
-    // Consultar mercado para cada candidato (hasta MAX_MARKET_PROBES)
-    let chosenMint = null;
-    let market     = null;
-
-    for (const c of candidates.slice(0, MAX_MARKET_PROBES)) {
-      const m = await getTokenData(c);
-
-      if (DEBUG_MARKET) {
-        console.log(m
-          ? `🟢 market HIT: ${c} → $${m.price} liqUsd=${m.liqUsd}`
-          : `⚪ market MISS: ${c}`
-        );
-      }
-
-      if (m && m.price > 0) {
-        // Aplica filtros mínimos
-        const liqOk = m.liqUsd === 0 ? true : (m.liqUsd >= MIN_LIQ_USD);
-        const volOk = m.volUsd === 0 ? true : (m.volUsd >= MIN_VOL_USD);
-        if (!liqOk || !volOk) {
-          if (DEBUG_MARKET) {
-            console.log(`⏭️ market HIT pero bajo filtros → liqUsd=${m.liqUsd} volUsd=${m.volUsd}`);
-          }
-          continue;
-        }
-
-        chosenMint = c;
-        market     = m;
-        break;
-      }
+    const candidates = extractCandidates(logs);
+    if (DEBUG_MARKET) {
+      console.log(`🧪 candidatos=${candidates.length} (${candidates.join(',')})`);
     }
 
-    if (!chosenMint || !market) return;
+    // limita cuántos probamos por tx
+    const toProbe = candidates.slice(0, MAX_MARKET_PROBES);
+    for (const mint of toProbe) {
+      if (BLOCKLIST.has(mint)) {
+        if (DEBUG_MARKET) console.log(`🚫 Blocklist: ${mint}`);
+        continue;
+      }
+      if (ALLOWLIST.size > 0 && !ALLOWLIST.has(mint)) {
+        if (DEBUG_MARKET) console.log(`⏭️ Fuera de allowlist: ${mint}`);
+        continue;
+      }
+      const key = `${signature}:${mint}`;
+      if (seenSigMint.has(key)) continue;
+      seenSigMint.add(key);
+      setTimeout(() => seenSigMint.delete(key), 120_000);
 
-    // Simulación redonda con spread
-    const { buy, sell, pnlPerc, pnlSol } = simulateRoundTrip(market.price);
+      // cooldown por mint (evitar hammering)
+      const last = cooldownMint.get(mint) || 0;
+      if (Date.now() - last < MINT_COOLDOWN_MS) continue;
+      cooldownMint.set(mint, Date.now());
 
-    const out = {
-      timestamp: new Date().toISOString(),
-      source: `${label}/${market.source}`,
-      signature: value?.signature || '',
-      mint: chosenMint,
-      buyPrice: buy,
-      sellPrice: sell,
+      simulateOnDexscreener(label, signature, mint).catch(() => {});
+    }
+  }
+}
+
+// ================== PARSEO CANDIDATOS ==================
+function extractCandidates(logs) {
+  const set = new Set();
+  for (const line of logs || []) {
+    const matches = line.match(BASE58_RE) || [];
+    for (const a of matches) {
+      if (IGNORE_ACCOUNTS.has(a)) continue;
+      // Heurística: no parece clave de sistema, ni programa conocido
+      if (a.length >= 32 && a.length <= 44) set.add(a);
+    }
+  }
+  return Array.from(set);
+}
+
+// ================== SIMULACIÓN (Dexscreener) ==================
+async function simulateOnDexscreener(label, signature, mint) {
+  try {
+    const pair = await runQueued(() => bestDexPairForMint(mint));
+    if (!pair) {
+      if (!ONLY_HITS && DEBUG_MARKET) {
+        console.log(`❌ MISS (sin pares): src=${label} mint=${mint}`);
+      }
+      return;
+    }
+
+    const priceNative = Number(pair.priceNative || 0);
+    const liqUsd = Number(pair.liquidity?.usd || 0);
+    const volUsd = Number(pair.volume?.h24 || 0);
+
+    if (!priceNative || liqUsd < MIN_LIQ_USD || volUsd < MIN_VOL_USD) {
+      if (!ONLY_HITS && DEBUG_MARKET) {
+        console.log(`❌ MISS filtros: ${mint} liqUsd=${liqUsd} volUsd=${volUsd} priceNative=${priceNative}`);
+      }
+      return;
+    }
+
+    // simulación super simple: buy al precio + slippage, sell al precio - (slippage+spread)
+    const buyPrice  = priceNative * (1 + SLIPPAGE_BPS / 10_000);
+    const sellPrice = priceNative * (1 - (SLIPPAGE_BPS + SIM_SPREAD_BPS) / 10_000);
+    const pnlPerc   = ((sellPrice - buyPrice) / buyPrice) * 100;
+    const pnlSol    = (pnlPerc / 100) * SIMULATED_AMOUNT_SOL;
+
+    const row = {
+      timestamp: nowIso(),
+      source: `${label}/Dexscreener`,
+      signature,
+      mint,
+      buyPrice,
+      sellPrice,
       pnlPerc,
       pnlSol,
-      liqUsd: market.liqUsd,
-      liqSol: market.liqSol,
-      volUsd: market.volUsd,
+      liqUsd,
+      volUsd
     };
 
-    console.log('🎯 SIM (válido):', out);
-    appendCsv(out);
+    console.log('🎯 SIM (válido):', row);
+    appendCsv(row);
+  } catch (e) {
+    if (!ONLY_HITS && DEBUG_MARKET) {
+      console.log(`⚠️ Error Dexscreener (${mint}):`, e.message);
+    }
   }
-});
-
-ws.on('error', (err) => {
-  console.error('❌ WS error:', err.message || err);
-});
-
-ws.on('close', (code, reason) => {
-  console.log(`⚠️ WS cerrado: ${code} ${reason ? reason.toString() : ''}`);
-  // Reintento sencillo
-  setTimeout(() => {
-    console.log('🚀 Conectando WS:', WS_URL);
-    reconnect();
-  }, 1500);
-});
-
-function reconnect() {
-  // Nota: script sencillo; para producción, abstrae el socket y re-crea listeners.
-  process.exit(0); // que tu PM2 / npm script lo relance, o vuelve a ejecutar manualmente
 }
 
-function sendLogsSubByProgram(id, programId) {
-  const payload = {
-    jsonrpc: '2.0',
-    id,
-    method: 'logsSubscribe',
-    params: [
-      { mentions: [programId] },
-      { commitment: 'processed' }
-    ]
+async function bestDexPairForMint(mint) {
+  // Dexscreener: https://api.dexscreener.com/latest/dex/tokens/{mint}
+  const url = `https://api.dexscreener.com/latest/dex/tokens/${mint}`;
+  const { data } = await axios.get(url, { timeout: 8000 });
+  const pairs = Array.isArray(data?.pairs) ? data.pairs : [];
+  if (pairs.length === 0) return null;
+
+  // nos quedamos con el par de mayor liquidez USD
+  pairs.sort((a, b) => (Number(b.liquidity?.usd || 0) - Number(a.liquidity?.usd || 0)));
+  const top = pairs[0];
+
+  // normalizamos algunos campos que usamos después
+  return {
+    priceNative: Number(top.priceNative || 0), // precio en SOL si está disponible
+    liquidity: { usd: Number(top.liquidity?.usd || 0) },
+    volume: { h24: Number(top.volume?.h24 || 0) },
+    dexId: top.dexId,
+    pairAddress: top.pairAddress
   };
-  ws.send(JSON.stringify(payload));
-  console.log(`📨 Enviada sub ${id} → ${programId.includes('6EF8r') ? 'Pump.fun' : 'Raydium'} (${programId})`);
 }
 
-function sendLogsSubAll(id) {
-  const payload = {
-    jsonrpc: '2.0',
-    id,
-    method: 'logsSubscribe',
-    params: [
-      { filter: 'all' },
-      { commitment: 'processed' }
-    ]
-  };
-  ws.send(JSON.stringify(payload));
-  console.log(`📨 Enviada sub ${id} → ALL`);
-}
+// ================== BOOT ==================
+connect();
