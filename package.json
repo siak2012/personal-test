@@ -1,0 +1,22 @@
+{
+  "name": "solana-sniper-mvp",
+  "version": "1.5.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "listen": "node src/ws-listener.js",
+    "discover": "node src/sniper.js discover",
+    "dryrun": "node src/sniper.js dryrun",
+    "roundtrip": "node src/sniper.js roundtrip",
+    "buy": "node src/sniper.js buy",
+    "keygen": "node src/sniper.js keygen"
+  },
+  "dependencies": {
+    "@solana/spl-token": "^0.4.7",
+    "@solana/web3.js": "^1.95.3",
+    "axios": "^1.11.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "undici": "^6.19.8"
+  }
+}
