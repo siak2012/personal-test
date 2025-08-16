@@ -13,13 +13,31 @@
     "listen:v2": "node src/ws-listener-advanced-v2.js"
   },
   "dependencies": {
-    "@solana/spl-token": "^0.4.7",
-    "@solana/web3.js": "^1.95.3",
+    "@solana/spl-token": "^0.4.13",
+    "@solana/web3.js": "^1.98.4",
     "axios": "^1.11.0",
+    "bs58": "^6.0.0",
+    "chalk": "^5.5.0",
     "csv-writer": "^1.6.0",
-    "dotenv": "^16.4.5",
-    "undici": "^6.19.8"
-  }
+    "dotenv": "^16.6.1",
+    "node-fetch": "^2.7.0",
+    "undici": "^6.19.8",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0"
+  },
+  "description": "- Extrae el **mint** a partir del **detalle de la transacción** (postTokenBalances), no de patrones en el texto del log. - Configura **RPC HTTP/WS** por separado para asegurar compatibilidad. - `SLIPPAGE_BPS` configurable desde `.env`. - `SIMULATE=true` por defecto (no envía dinero real).",
+  "main": "bot.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siak2012/personal-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siak2012/personal-test/issues"
+  },
+  "homepage": "https://github.com/siak2012/personal-test#readme"
 }
-
-

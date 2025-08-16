@@ -1,1 +1,0 @@
-# (opcional) si pones mints aquí, solo se considerarán estas

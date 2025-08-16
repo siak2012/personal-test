@@ -1,0 +1,2409 @@
+[
+  {
+    "time": "2025-08-15T23:44:38.144Z",
+    "signature": "8cbkLwm7bZVt12fxU1BWDkH6mLva4G84AbQ96yu6rFNM1uaugAz1d9vMCETKVEAVVmXu3KJoYeW3eGL3YcXZ2iZ",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.4,
+    "priceBuy": 0.06785414,
+    "priceSell": 0.08142497
+  },
+  {
+    "time": "2025-08-15T23:44:38.159Z",
+    "signature": "4AiNnSHiiKK4pcv1CzBM9G1LedKNiiHwytPzf43xXoQM5x9vZihAJgstsAgJNDMPS3ycn5aZGSEnLStYrGxAsnpJ",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.54,
+    "priceBuy": 0.07066324,
+    "priceSell": 0.08479589
+  },
+  {
+    "time": "2025-08-15T23:44:38.303Z",
+    "signature": "MTdrstJWqUmrvkPZQComumX4g7yZMrAfB5YM2aRg9y55jLrRNGX84aN9LX29xabfKbBbkr3fDCY3HaUFMv961ew",
+    "mint": "NoEncontrado",
+    "liquidity": 2.17,
+    "priceBuy": 0.08984152,
+    "priceSell": 0.10780982
+  },
+  {
+    "time": "2025-08-15T23:44:38.325Z",
+    "signature": "2KWNVrZTsJoNJkdr5X5cQ1zLKAhRwLDybqagcX7voTvg5VfSAcN2diuuSMBhHjZqmykTRazQF2JCd6UL5yMyKEFs",
+    "mint": "NoEncontrado",
+    "liquidity": 2.13,
+    "priceBuy": 0.07287417,
+    "priceSell": 0.087449
+  },
+  {
+    "time": "2025-08-15T23:44:38.335Z",
+    "signature": "2aYGmVEr537qg98ePoeR2n1kPRQsp41AEJ4hQDzdPW9yiPZAyWQamJjTNSQrKed7ejvUt21sAdYhTBNkuEZ8VZsX",
+    "mint": "NoEncontrado",
+    "liquidity": 0.19,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:38.362Z",
+    "signature": "4bgWUepCqWhFc7rghFPc3mvAy7wfRoSaP8swbQefZ6jj5sjkqGTxTY5hXaw7nfRkJzAHK2Nt9iSpLpiCS33esQsX",
+    "mint": "NoEncontrado",
+    "liquidity": 12.54,
+    "priceBuy": 0.05769618,
+    "priceSell": 0.06923542
+  },
+  {
+    "time": "2025-08-15T23:44:38.388Z",
+    "signature": "2DXGDybPHCZny5u6uvEHLzvzwywevTnSqrsmygyQTuWvi3QpTBt4GvHaiFnh7DL5BR12HCLeBP1D63V4gqJxaeck",
+    "mint": "NoEncontrado",
+    "liquidity": 8.32,
+    "priceBuy": 0.106587,
+    "priceSell": 0.1279044
+  },
+  {
+    "time": "2025-08-15T23:44:38.405Z",
+    "signature": "4PecM7zaTCAA9s61tzK7ixKWNGwcezdigDYfTTYN4SauVKp6MTCgJS7dpdQApgQaGGVepWowD1Recc3rkU1MxGbe",
+    "mint": "NoEncontrado",
+    "liquidity": 7.65,
+    "priceBuy": 0.06273055,
+    "priceSell": 0.07527666
+  },
+  {
+    "time": "2025-08-15T23:44:38.425Z",
+    "signature": "4D2uxvrtbkhzStvzC5cTEKXC8FsRyTnLEn7CXWf4U7xB1M7w64nEdphT3wpFEiR2g66T66kr5oqVhRfmoyZ9W4Rj",
+    "mint": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+    "liquidity": 6.07,
+    "priceBuy": 0.12104698,
+    "priceSell": 0.14525638
+  },
+  {
+    "time": "2025-08-15T23:44:38.447Z",
+    "signature": "2eWyUiuuVSPb8SBSjZJqsQYzG67fnfdWVok6Scv4vESLgJ1kAV3BwUvAQh59fmJSyhzrPyT3WjovQYjmS5FQBRsD",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.48,
+    "priceBuy": 0.06748851,
+    "priceSell": 0.08098621
+  },
+  {
+    "time": "2025-08-15T23:44:38.453Z",
+    "signature": "2JiXprPqLxuoxAvynHDdvoNgULjwVqnMdPQHxcFbwWgm6oyZoxZndVcie64hXPMUoV8c2Ui4Nn4MYi9x2FjyfevU",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.12,
+    "priceBuy": 0.07586583,
+    "priceSell": 0.091039
+  },
+  {
+    "time": "2025-08-15T23:44:38.462Z",
+    "signature": "PxyesKkRUUXpV4tmAqYuLR1gr7N9A5YGFyMNNB2t37Dm6LeabnFkQpFN3amhnrNdYYkMeGjxYzJ2RW1MDHsWLtj",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.45,
+    "priceBuy": 0.12965374,
+    "priceSell": 0.15558449
+  },
+  {
+    "time": "2025-08-15T23:44:38.467Z",
+    "signature": "3WpiYJPQBRVCaDrXgmqnRiCVn2eErQiYNAJcrJQdyfPqKPreH7q9f1bF4n4Uj2w5vxLZRpCrvdyFo8itJH9tkcpM",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 10.82,
+    "priceBuy": 0.09503742,
+    "priceSell": 0.1140449
+  },
+  {
+    "time": "2025-08-15T23:44:38.481Z",
+    "signature": "5Fh6QaC7xAH7UCi9kjzCqfKwHRQnPMmiN87cavGwbXN3XXGjGnEVc8cFP37LkVjKG5gBYTgXbLXQ2caoAw3KCYej",
+    "mint": "NoEncontrado",
+    "liquidity": 6.05,
+    "priceBuy": 0.11886072,
+    "priceSell": 0.14263286
+  },
+  {
+    "time": "2025-08-15T23:44:38.501Z",
+    "signature": "3xFgiNYccYw7HWaKE1n1Yp4j8TQZLxYJTjWWSEwNVzuHr3FbmrLZ4RGCR25QuXdmCpczD9TsjfeXQf33jJkTC4hM",
+    "mint": "NoEncontrado",
+    "liquidity": 1.47,
+    "priceBuy": 0.11899756,
+    "priceSell": 0.14279707
+  },
+  {
+    "time": "2025-08-15T23:44:38.506Z",
+    "signature": "3YSEGAxYsh9FSmhAspE7q2FsZ6cz69wQ1xdEkkWNqxqoMjVyE87ENPjuMWKp6srhRZxMwBRTFKt8Rh1piVY2n9ko",
+    "mint": "NoEncontrado",
+    "liquidity": 9.74,
+    "priceBuy": 0.05120398,
+    "priceSell": 0.06144478
+  },
+  {
+    "time": "2025-08-15T23:44:38.511Z",
+    "signature": "4pntV7AT95ntk7EePTpsVpp8TWxRiePffT6iNpJnMRC8f9n6zKEzoMnh6fE4Pkqdw79mamExRr8B8YAuhTVWwFyZ",
+    "mint": "NoEncontrado",
+    "liquidity": 6.2,
+    "priceBuy": 0.10896983,
+    "priceSell": 0.1307638
+  },
+  {
+    "time": "2025-08-15T23:44:38.516Z",
+    "signature": "QWUym2Gcs3qSQiv5RpWSAp7WYUmV7UfMXeBPM7L3KJQhTUHCxytbQSdQJujgU8wKhNh2ThnZXLCzb5vZ3Dm15pB",
+    "mint": "NoEncontrado",
+    "liquidity": 4.7,
+    "priceBuy": 0.07375471,
+    "priceSell": 0.08850565
+  },
+  {
+    "time": "2025-08-15T23:44:38.520Z",
+    "signature": "3NvYqZ1SW74fjapHF4poVQ9zhT4KhvqETSumBzBQ4dZiVhbHCGV12eaT11T2b2b2gCPu3oSLECLBctGCxD62ZiRi",
+    "mint": "NoEncontrado",
+    "liquidity": 8.5,
+    "priceBuy": 0.00475693,
+    "priceSell": 0.00570832
+  },
+  {
+    "time": "2025-08-15T23:44:38.549Z",
+    "signature": "58hKCPfUYexNMktGyJkDB9FLPFMtBUEuM1X8RRX2n47aEUbEnyZZf4AGaaPQAB7Qz5h5Yff5ioV3hb2UXhovKVdJ",
+    "mint": "NoEncontrado",
+    "liquidity": 5.76,
+    "priceBuy": 0.07281897,
+    "priceSell": 0.08738276
+  },
+  {
+    "time": "2025-08-15T23:44:38.554Z",
+    "signature": "4ZXAAW3357caZ2eE46hZ35ffZjr21s76uLCo1QyckNnkiGFKYDNNAQ5FVtLzNbrurKeL8KN9STbVv5BzK5vRh3uL",
+    "mint": "NoEncontrado",
+    "liquidity": 9.12,
+    "priceBuy": 0.10260852,
+    "priceSell": 0.12313022
+  },
+  {
+    "time": "2025-08-15T23:44:38.557Z",
+    "signature": "57cFAL82Pm3EiqzbG7EPyCRXaGf7LkKNBu6aBw6s3cfG1TeZwY3UqeP1Gwch1gQB4mqjsxksXH6Kz9VUHFeRZLvu",
+    "mint": "NoEncontrado",
+    "liquidity": 0.46,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:38.576Z",
+    "signature": "2pcBxfbS7VkFq3C9vSgWN7fGtms7WjVukuchMQBeccBe7FyzqCnoEsDBUKAvhYc4Anv8eahgjrD7LK61yrgu8zPN",
+    "mint": "NoEncontrado",
+    "liquidity": 6.51,
+    "priceBuy": 0.00470898,
+    "priceSell": 0.00565078
+  },
+  {
+    "time": "2025-08-15T23:44:38.582Z",
+    "signature": "64EiLRJDWRNTe1Bqy7thDtMJEA426bsagJjtYznWLxMCqWjn4LjFar5WhCNLmX2sS6sYVJGKRudFBYMNnB53fnKH",
+    "mint": "NoEncontrado",
+    "liquidity": 4.86,
+    "priceBuy": 0.0548277,
+    "priceSell": 0.06579324
+  },
+  {
+    "time": "2025-08-15T23:44:38.589Z",
+    "signature": "3DHJnJpEE1P3zA5vZHuL4AAzSz9u87bTpDrp1wvKzUx1qxoQBpaouB9zGTKopBFXVo9dMiwrSScvwwahr29WipVV",
+    "mint": "NoEncontrado",
+    "liquidity": 5.93,
+    "priceBuy": 0.09730835,
+    "priceSell": 0.11677002
+  },
+  {
+    "time": "2025-08-15T23:44:38.595Z",
+    "signature": "3375iLUKExyLzwjfRurGFNaQaVYUDPXcAECGNwd5NvEPEnSUqenbixsTq3QCPSujf8BWwrhFPrwpEnZDQUUyChmN",
+    "mint": "NoEncontrado",
+    "liquidity": 2.28,
+    "priceBuy": 0.01567173,
+    "priceSell": 0.01880608
+  },
+  {
+    "time": "2025-08-15T23:44:38.601Z",
+    "signature": "xNAmPQiUUezoFYTKj2DpeHRS6v587gqqXuVqXxwiEVU6Tqsb9GmYXxPwUfJGdKEQzEX4BZ6DD165WAFLHnr4yXv",
+    "mint": "NoEncontrado",
+    "liquidity": 13.87,
+    "priceBuy": 0.07215619,
+    "priceSell": 0.08658743
+  },
+  {
+    "time": "2025-08-15T23:44:38.607Z",
+    "signature": "3xm7zPQC6yXcegc6FsQnxNJJtyrpxGQ8u9Gif1yRPbuc7DDPTgjUtuCd36g1CiwfVmV9MNRnLnDSFmBnrYZN6pTr",
+    "mint": "NoEncontrado",
+    "liquidity": 11.11,
+    "priceBuy": 0.11379613,
+    "priceSell": 0.13655536
+  },
+  {
+    "time": "2025-08-15T23:44:38.613Z",
+    "signature": "3hAh2XD5fhvRrafeLFiHEsj5Ck7EHu5b4LL7qEg9Qtm35sDeeULd5yYyyJ674F6Pd12farNcdnShduQr2o5tiMmd",
+    "mint": "NoEncontrado",
+    "liquidity": 4.87,
+    "priceBuy": 0.06435063,
+    "priceSell": 0.07722076
+  },
+  {
+    "time": "2025-08-15T23:44:38.619Z",
+    "signature": "5vmrwf7PYZgatjC1gG3DEwF4eS1zcrrYa6PbTt5eJynxwf5Py1BvukvmyWY31phzEkdvZFSKtAtToUb9enHicnc6",
+    "mint": "NoEncontrado",
+    "liquidity": 8.05,
+    "priceBuy": 0.07602574,
+    "priceSell": 0.09123089
+  },
+  {
+    "time": "2025-08-15T23:44:38.625Z",
+    "signature": "4wGZHfvtHgbJSJPUhhrpjrXXgS3NYjXYRQVSNN3QDCMzWr9hjyDCExjnteq9Jq5drrd6GHQUXkQG8YXYCEe1Jpke",
+    "mint": "NoEncontrado",
+    "liquidity": 1.74,
+    "priceBuy": 0.13606069,
+    "priceSell": 0.16327283
+  },
+  {
+    "time": "2025-08-15T23:44:38.632Z",
+    "signature": "4T1GzgUrpgP4qPrTFdUGg5qVEeUgyj3BmZsELf3bpcaJcPGCce4UBPXCuZ9YGAcBut2SWRSoMYcTCEeNRpJ8YQvV",
+    "mint": "NoEncontrado",
+    "liquidity": 13.75,
+    "priceBuy": 0.00150002,
+    "priceSell": 0.00180002
+  },
+  {
+    "time": "2025-08-15T23:44:38.638Z",
+    "signature": "QBgujHjVHSA6K6pvxyDsWuLDJ7W2f1nQb8NyzeAEpAHhZ4vQVzfrYP7YqwL5nrKq9JVabiw61QGTGbQxwoBDrNh",
+    "mint": "NoEncontrado",
+    "liquidity": 5.94,
+    "priceBuy": 0.1397185,
+    "priceSell": 0.1676622
+  },
+  {
+    "time": "2025-08-15T23:44:38.644Z",
+    "signature": "2VdsYzXDW1yCEijrXYe3oRPeSpQn1fiWxdxcTdE7uDhWbXtyrVg4wcaUDgSes2TeFZWGS2vGTG3o4uRBrjYWs2kg",
+    "mint": "NoEncontrado",
+    "liquidity": 5.16,
+    "priceBuy": 0.08235534,
+    "priceSell": 0.09882641
+  },
+  {
+    "time": "2025-08-15T23:44:38.649Z",
+    "signature": "3fYssYaoYtq3aBuTkmmnfiqAcrF4Ma5Wr3FrgRCyJKDa4mRC1uegUH73JgzNd2zc16zy4c2Aex86ncmrYjCEDREj",
+    "mint": "NoEncontrado",
+    "liquidity": 1.95,
+    "priceBuy": 0.02429412,
+    "priceSell": 0.02915294
+  },
+  {
+    "time": "2025-08-15T23:44:38.657Z",
+    "signature": "5hB5A7mNCTwL7HvdYbZY8FG83Ef8UFA9bjYB4FPz9cT5MWDy14yHAGktjdbf39qg44FvpXyNRYseyhjBJavUL6bP",
+    "mint": "NoEncontrado",
+    "liquidity": 6.15,
+    "priceBuy": 0.12948912,
+    "priceSell": 0.15538694
+  },
+  {
+    "time": "2025-08-15T23:44:38.663Z",
+    "signature": "3fsuCKMHzhxC4NKwkToMtc1HvNHYEuzj3KUkPSXFjQZhYxJr5RuyUEzexvUbyztEtgr2wLjqFjftbRaPRdHLgPtY",
+    "mint": "NoEncontrado",
+    "liquidity": 4.41,
+    "priceBuy": 0.13307679,
+    "priceSell": 0.15969215
+  },
+  {
+    "time": "2025-08-15T23:44:38.669Z",
+    "signature": "5uo5EF1wYQ5aVrb3fJFABZH46nDF4bxyJK6SHMso8Nvd1pKaxjw8Vv7hTYReenfsgvzS8b4GzPENvQzYFXieP8hT",
+    "mint": "NoEncontrado",
+    "liquidity": 10.48,
+    "priceBuy": 0.0110899,
+    "priceSell": 0.01330788
+  },
+  {
+    "time": "2025-08-15T23:44:38.676Z",
+    "signature": "4eokWXru46eTTmENTKboJedKT6xUi34B3dcravV9Ei82w3q3HC5fsMTK4ebEtzwgV1owwiz5DRuW5QbQXsAd7KAj",
+    "mint": "NoEncontrado",
+    "liquidity": 5.57,
+    "priceBuy": 0.11525112,
+    "priceSell": 0.13830134
+  },
+  {
+    "time": "2025-08-15T23:44:38.682Z",
+    "signature": "53cFzk7sWzFty71c3yNn3myqsH5TWNPFjeR8BkgDuAKXyYKGwFDLSM6Ahk8UXSdudnMKR67WygxkBx5nfrty4AtQ",
+    "mint": "NoEncontrado",
+    "liquidity": 8.47,
+    "priceBuy": 0.08925844,
+    "priceSell": 0.10711013
+  },
+  {
+    "time": "2025-08-15T23:44:38.687Z",
+    "signature": "5UHHhCu4b2QVPFYiiurMeuSE8BSXLRScYHGmiRRALNtXZuo5uCEZ921vy5A63DDDuoFguEdHrVi9z3XdT87EYr9k",
+    "mint": "NoEncontrado",
+    "liquidity": 7.48,
+    "priceBuy": 0.08370043,
+    "priceSell": 0.10044052
+  },
+  {
+    "time": "2025-08-15T23:44:38.692Z",
+    "signature": "4Jsut7P5QGuwy7pXuW3Zfe3UqtRVdNiKSbQchD6JyLducpWRrgZvRvryPbpyi9dqbnwc4NDb7sKsvWEP1dpw1biq",
+    "mint": "NoEncontrado",
+    "liquidity": 9.79,
+    "priceBuy": 0.07948815,
+    "priceSell": 0.09538578
+  },
+  {
+    "time": "2025-08-15T23:44:38.699Z",
+    "signature": "ZUoxYAWboJnMEhEKH8i8tXzsvv3BmrLmfKUERukSofeowRpA5v4ydWZzEBxiujLdYQEnEVS3iHjKmtajZ57KAzq",
+    "mint": "NoEncontrado",
+    "liquidity": 8.7,
+    "priceBuy": 0.02228562,
+    "priceSell": 0.02674274
+  },
+  {
+    "time": "2025-08-15T23:44:38.706Z",
+    "signature": "BZQsVNA6J3zjpNnbbhkzigsJr4LoQseyQEqxcoaFikzSxNUczn764EPfk9g2sP72UK8E1A3w5hqHG9Xc1JJ5PAW",
+    "mint": "NoEncontrado",
+    "liquidity": 6.93,
+    "priceBuy": 0.09107211,
+    "priceSell": 0.10928653
+  },
+  {
+    "time": "2025-08-15T23:44:38.711Z",
+    "signature": "5CZ9wqEte9cVvVwDBJgciGKPYSdcpB8vGjpVrKD67z9sXErvdjSkgxQEHMEDcfcCmCuY3fq4pFxJrAT4tkfo3ETU",
+    "mint": "NoEncontrado",
+    "liquidity": 11.89,
+    "priceBuy": 0.10266418,
+    "priceSell": 0.12319702
+  },
+  {
+    "time": "2025-08-15T23:44:38.719Z",
+    "signature": "33MENUDpLDBQj1nVYWYsvKtSdJKx7h8Q9x9NbYPgnsgNUq6QDjbdDzTHoJZKXx3GtMZt8aut9eEqEDG6sCYdUm6b",
+    "mint": "CroWg74XNDF8UMnAZVbXx49iVj7iJ7b4CsqTCVWF7aK",
+    "liquidity": 11.47,
+    "priceBuy": 0.09207365,
+    "priceSell": 0.11048838
+  },
+  {
+    "time": "2025-08-15T23:44:38.733Z",
+    "signature": "4xktBG8RgZjJcEbVQDo6CPhCaP1cZJRcwVKAB2gS2Fwxbq9SorSpVr5ReUymT5vip8HXN3v4YTJWrvaah33vwM8d",
+    "mint": "NoEncontrado",
+    "liquidity": 12.99,
+    "priceBuy": 0.032032,
+    "priceSell": 0.0384384
+  },
+  {
+    "time": "2025-08-15T23:44:38.739Z",
+    "signature": "5RuBhZjwh5ytQLFzMhtC8Mvp8k8uCAa8au6MqNiPCxLEQWg49s8cwhusPm7J7fLzid33VMHbP22wbe96aWXa1AK",
+    "mint": "NoEncontrado",
+    "liquidity": 7.29,
+    "priceBuy": 0.06456907,
+    "priceSell": 0.07748288
+  },
+  {
+    "time": "2025-08-15T23:44:38.746Z",
+    "signature": "5sj3g2hVLpeAqbkJopHf5qWNLjeqHnxJ7H1edUd8ioBJhYiEHz3y4EECbBfWTM2JaVuxJcqTKYbboVmXYRtbuBzH",
+    "mint": "NoEncontrado",
+    "liquidity": 2.9,
+    "priceBuy": 0.09123521,
+    "priceSell": 0.10948225
+  },
+  {
+    "time": "2025-08-15T23:44:38.753Z",
+    "signature": "5B5QBEwQMcVan6ZAQ2jTQAmJVwTn4WpCTqUC2siFsGXNH9S1CpnrJU3ygoqHkf5G9b2sVbTFuW3PkFqvXmvjtmYa",
+    "mint": "NoEncontrado",
+    "liquidity": 13.13,
+    "priceBuy": 0.01744982,
+    "priceSell": 0.02093978
+  },
+  {
+    "time": "2025-08-15T23:44:38.759Z",
+    "signature": "zpbBdWuNLtipAeWG3FmciGcuRB26qEnNGbWZVDFmr8AewF3X3Vnrots7HLSG5Gs6QqjFgrDLkCNLiixWYvfzcGM",
+    "mint": "NoEncontrado",
+    "liquidity": 8.59,
+    "priceBuy": 0.13401399,
+    "priceSell": 0.16081679
+  },
+  {
+    "time": "2025-08-15T23:44:38.782Z",
+    "signature": "4m1cGsmPCNXL3AsGVFF5F7fKgAwGAUoepagYkoMMPEJDG2DktLiU6JJby48yx6YGy6Y1LKASjoarrFT6ica8CbrX",
+    "mint": "NoEncontrado",
+    "liquidity": 13.75,
+    "priceBuy": 0.14019273,
+    "priceSell": 0.16823128
+  },
+  {
+    "time": "2025-08-15T23:44:38.788Z",
+    "signature": "2w4qEbsuMkta6tdKdq8aTbaFcvhcMT5HBHsV1TGHiPgmWXSnBSTKEJpA1wzcZkeokBbMCQZAiqg3ryQrXcZnAJRy",
+    "mint": "NoEncontrado",
+    "liquidity": 14.98,
+    "priceBuy": 0.07912001,
+    "priceSell": 0.09494401
+  },
+  {
+    "time": "2025-08-15T23:44:38.794Z",
+    "signature": "414EMgQKitLhSQM6zwt4b4P2djvARuMRZadYy5N89qJSvz9uUJ28XGqXCVVgFiyEB1yKUjtkXrmgxtUoaRWANHs2",
+    "mint": "NoEncontrado",
+    "liquidity": 5.14,
+    "priceBuy": 0.13647906,
+    "priceSell": 0.16377487
+  },
+  {
+    "time": "2025-08-15T23:44:38.799Z",
+    "signature": "2KpRzctvZ1VgJUZgAWC8rURCr263NnsEN3rSqHVbd2sHfDsmNDYJKdquMn2Ap6brwugzswPeXE2v1zWBUz5CBsBv",
+    "mint": "NoEncontrado",
+    "liquidity": 14.52,
+    "priceBuy": 0.08259871,
+    "priceSell": 0.09911845
+  },
+  {
+    "time": "2025-08-15T23:44:38.806Z",
+    "signature": "6uugzD6nWb1GeiKXUWtC5kG55Znkag4LFwtAXP36rbGLmv3RFWicRtssoqPiLGtCp3JtJSykp7yxGzHpz1ivTHg",
+    "mint": "NoEncontrado",
+    "liquidity": 6.44,
+    "priceBuy": 0.03539505,
+    "priceSell": 0.04247406
+  },
+  {
+    "time": "2025-08-15T23:44:38.814Z",
+    "signature": "2ZEEm9hUCz33FKyM2Uz1QLHkmmoLeBCRWG3gJT2Zj7XkNhZzaTdjQPeGWVy3USpXdehUefbXZs6c7UBcG1b1oHkY",
+    "mint": "NoEncontrado",
+    "liquidity": 0.67,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:38.841Z",
+    "signature": "53JrxTQVCQZR8Z4eEkPA14r5maUXdo6HtjSY6ny4cbTzLU12SzctazaWnqqWjDLYaERKFHP9ZH6nygZRXC9yYrEV",
+    "mint": "NoEncontrado",
+    "liquidity": 5.68,
+    "priceBuy": 0.02216611,
+    "priceSell": 0.02659933
+  },
+  {
+    "time": "2025-08-15T23:44:38.853Z",
+    "signature": "bLosS8QMYopWhtKdAxeP2iKq93Lk5QHeRUeTJ5s6xFvUr2MzHyuYLNdnu1Rhu9Tr95be3uYeU8pkV1DkXWhctWr",
+    "mint": "NoEncontrado",
+    "liquidity": 5.32,
+    "priceBuy": 0.06995743,
+    "priceSell": 0.08394892
+  },
+  {
+    "time": "2025-08-15T23:44:38.917Z",
+    "signature": "5K4Vo7qBw8PN1Dwuy2C1gnf46TUaP6TptRUfQRRjzEdabYCbydzTwnjYhnFSuoPASBxJTa2uoPKRT5CgipZLa82y",
+    "mint": "NoEncontrado",
+    "liquidity": 3.47,
+    "priceBuy": 0.0542676,
+    "priceSell": 0.06512112
+  },
+  {
+    "time": "2025-08-15T23:44:38.955Z",
+    "signature": "578BQcWeiFbSzzFh2ZQNaefsLUZJbA7kiwnJ4me5HSbqxTJ1L8mbhexWCvnkU3tszfyYbwhxChqJ7heMJg1Y8vhz",
+    "mint": "NoEncontrado",
+    "liquidity": 8.35,
+    "priceBuy": 0.10319961,
+    "priceSell": 0.12383953
+  },
+  {
+    "time": "2025-08-15T23:44:38.962Z",
+    "signature": "3HCBsSJi7T1sjBj2X16aNxUcuZhxjyqTu5a5FrwYz8PjFCDuMkBnW2VRMrfdWqpuKFnqsbcujXZPDeZtF1hRp6Lp",
+    "mint": "NoEncontrado",
+    "liquidity": 5.52,
+    "priceBuy": 0.03764072,
+    "priceSell": 0.04516886
+  },
+  {
+    "time": "2025-08-15T23:44:38.967Z",
+    "signature": "5J7V5q4KhhGivWfjjcfvTq8cUCSWGmDWjnZpbskuu9vHc9fAMpyM7mWETV37Yxvo8xo8XRFfXjYAsaWQZWDGpsqK",
+    "mint": "NoEncontrado",
+    "liquidity": 13.26,
+    "priceBuy": 0.08827767,
+    "priceSell": 0.1059332
+  },
+  {
+    "time": "2025-08-15T23:44:38.973Z",
+    "signature": "isPYmvidR8SxJ2sJ8dRJnRM2tKsaXw1iaXsfnsNGwVePQJjA8NDgRMV2eDyYWeyKqbmd9YiNk4pYEWMhYxEeUGV",
+    "mint": "NoEncontrado",
+    "liquidity": 10.58,
+    "priceBuy": 0.08404979,
+    "priceSell": 0.10085975
+  },
+  {
+    "time": "2025-08-15T23:44:38.991Z",
+    "signature": "4Td6fxxRrFZoSZkMxQZEuGYZPxvAA7fmwTpLbKxMHo7q9U8ufGm9nNoFUH6v6fFz1mTDg2BFoyusyUPvNECpu7oJ",
+    "mint": "NoEncontrado",
+    "liquidity": 6.13,
+    "priceBuy": 0.14324909,
+    "priceSell": 0.17189891
+  },
+  {
+    "time": "2025-08-15T23:44:39.045Z",
+    "signature": "4b5QevneoZkiLTBbtSmdn2NjLoaua7tCuY6N3c5WAtS8HhHr1SCYyLYvVSXh5ZcXa5RWtKqD84BHqbgbq2ju75DD",
+    "mint": "NoEncontrado",
+    "liquidity": 3.9,
+    "priceBuy": 0.12038967,
+    "priceSell": 0.1444676
+  },
+  {
+    "time": "2025-08-15T23:44:39.086Z",
+    "signature": "2BaQDzd5vqGKw8ef3xc8dq9tuEDCLTMnqTLMGkTpwDTD8Uz4JPkxPWKSBbqt3W88BxNJ17RXT5WCkvuJMGLEqxZM",
+    "mint": "NoEncontrado",
+    "liquidity": 12.9,
+    "priceBuy": 0.01316716,
+    "priceSell": 0.01580059
+  },
+  {
+    "time": "2025-08-15T23:44:39.116Z",
+    "signature": "uzCjyaAXegsG3dz3hhPW3zckrbMn1bszo2xCYz2GyWoUM28cbKYB6pve7TQjWfJG8Npt2Jd12tduH8F6WurUsik",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.98,
+    "priceBuy": 0.06084197,
+    "priceSell": 0.07301036
+  },
+  {
+    "time": "2025-08-15T23:44:39.123Z",
+    "signature": "2hhbd988DA7z7CRA37guxvCngQ6KUETBHtkoNn8awNRxE5ZPi68w84r9Cy42s19q9oZMw14LxrhoyctRSM7mtXDd",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.59,
+    "priceBuy": 0.14408463,
+    "priceSell": 0.17290156
+  },
+  {
+    "time": "2025-08-15T23:44:39.130Z",
+    "signature": "34Av4WEjqDwnLeLXu1z3qbNmfgCq675qmPxGHmxReMJrzkmF2tHZx5KmzpXq87B739tjWR76WMpjE5sA7issashd",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.13,
+    "priceBuy": 0.08719653,
+    "priceSell": 0.10463584
+  },
+  {
+    "time": "2025-08-15T23:44:39.136Z",
+    "signature": "2cbdHUPdjp8iJuiykQkm1HooSqBNwUH9e7qR3FfFrh3FmY1AWYrPqtqqjsMrbTpnf9k2zkGeSEHCFSnPoU2CprWc",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 14.03,
+    "priceBuy": 0.07724188,
+    "priceSell": 0.09269026
+  },
+  {
+    "time": "2025-08-15T23:44:39.150Z",
+    "signature": "4MMXJJ9G3ssXLz26gnweRrewYKKD9RLsmBScqZkfgF59kUcAPqsyUzVv8wXDntxT84831ESe2jhqG5hvkbEQUGrF",
+    "mint": "NoEncontrado",
+    "liquidity": 4.18,
+    "priceBuy": 0.09895197,
+    "priceSell": 0.11874236
+  },
+  {
+    "time": "2025-08-15T23:44:39.157Z",
+    "signature": "24oGGMet7Jkf1xeNjMQnt5bi3yjxkmULbkHwGeLMuedguZT9sFqLtkXjrHSbKHR4Nxfvydc6PUoVxbeSC31eAmYP",
+    "mint": "NoEncontrado",
+    "liquidity": 6.41,
+    "priceBuy": 0.10430269,
+    "priceSell": 0.12516323
+  },
+  {
+    "time": "2025-08-15T23:44:39.163Z",
+    "signature": "U5Mf8pYqvS9bKaSp4f2y5yBkMHsJBQHvnNZEG1sdvFqdoAhTBwJ3fFSKrC9ah1G7k5bK9eMvz5692o7nf4doFtp",
+    "mint": "NoEncontrado",
+    "liquidity": 13.71,
+    "priceBuy": 0.06640563,
+    "priceSell": 0.07968676
+  },
+  {
+    "time": "2025-08-15T23:44:39.170Z",
+    "signature": "BR1YLYvkAaVChcCQEfVvrkQKUwMsNXjVf1RHBs7cvymsupPuo2R7tQ4KjiQMD3vd3VpRt4osdBfRmYMr1fwvsK8",
+    "mint": "NoEncontrado",
+    "liquidity": 14.76,
+    "priceBuy": 0.03598195,
+    "priceSell": 0.04317834
+  },
+  {
+    "time": "2025-08-15T23:44:39.173Z",
+    "signature": "2qVBsmYCu1Nvso53E7ppBycJRgPzwKJ4aXWQFLTZXZuE5pFGZER18xzKHnSaEYo6oe4Q6nmemSicRaPdkUvVmGXY",
+    "mint": "NoEncontrado",
+    "liquidity": 0.98,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:39.179Z",
+    "signature": "yMTictedpRyE1Qn9nhdoaR2YUECRGnonwc4gHr9tipWnSu37SMvbR7mUtNKRmTVR463uzPqp2XofGvdER2yKLki",
+    "mint": "NoEncontrado",
+    "liquidity": 6.85,
+    "priceBuy": 0.11303348,
+    "priceSell": 0.13564018
+  },
+  {
+    "time": "2025-08-15T23:44:39.185Z",
+    "signature": "3L93aWbHAu6Aqw2V2iJ7xaKfU27cqSnZyrnwZWGFdLUmeFBzDLFu9VdMnz8Zw7XwdjjcyNWd34pGUU8QqXcY1PRk",
+    "mint": "NoEncontrado",
+    "liquidity": 4.13,
+    "priceBuy": 0.01365446,
+    "priceSell": 0.01638535
+  },
+  {
+    "time": "2025-08-15T23:44:39.192Z",
+    "signature": "57tmDPzR6MVPg5j8zaWHFXjL3XLofHsyphJiz4unaDTzRYVx3Aain5ccrrPTm6s71gz3vr3MDaNQiZkFv39UAc5c",
+    "mint": "NoEncontrado",
+    "liquidity": 8.85,
+    "priceBuy": 0.01094618,
+    "priceSell": 0.01313542
+  },
+  {
+    "time": "2025-08-15T23:44:39.198Z",
+    "signature": "3gsxKJnYG6MYXNBYpGmBeNRpWGf75oMPoG41b1SA3YCXCfGCLQrX5rBqFYjEDdpYxYWDowTTUMP1F3zGQ5FKXMcu",
+    "mint": "NoEncontrado",
+    "liquidity": 6.21,
+    "priceBuy": 0.11952459,
+    "priceSell": 0.14342951
+  },
+  {
+    "time": "2025-08-15T23:44:39.205Z",
+    "signature": "pRJTucK4bisfknHdCdyQz7uZaVdjFekBHHJ25RuactxRwhD7vJ27CkHJmT5eAUUQKsEXZwZMFQs4XZfFtDsYdk7",
+    "mint": "NoEncontrado",
+    "liquidity": 11.68,
+    "priceBuy": 0.111794,
+    "priceSell": 0.1341528
+  },
+  {
+    "time": "2025-08-15T23:44:39.211Z",
+    "signature": "3EQJ8d4WFdEr8KpBFdD7Be3oUxLvccTRHshrYmHHTPF9FJkyQQDaVPSenTrcVytmg8q8nwZ1EM9M64xaagVDFxxd",
+    "mint": "NoEncontrado",
+    "liquidity": 2.22,
+    "priceBuy": 0.06858963,
+    "priceSell": 0.08230756
+  },
+  {
+    "time": "2025-08-15T23:44:39.214Z",
+    "signature": "4VTW9NmopWF9Psy3ky3VfgD3AKdCeUD7D5zVgpVnfeVWQbhWqk6K1KxQCXD8beSTnAPzUCcCz4PyFMaWrsY1FkLQ",
+    "mint": "NoEncontrado",
+    "liquidity": 0.5,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:39.220Z",
+    "signature": "2S58brwy3f8A9N3NBM9SutSEZrnRD2KUVXq5u4yvmJsoAVGR69YgVMCR2gbqpU4BUpKPEKveLu5yatoW3AhyEcLC",
+    "mint": "NoEncontrado",
+    "liquidity": 5.04,
+    "priceBuy": 0.01783551,
+    "priceSell": 0.02140261
+  },
+  {
+    "time": "2025-08-15T23:44:39.226Z",
+    "signature": "3xEyz5zwj84GUk6mzJSuvU1RUZ2yZs9ZcX9BYjauMLuYsDWUbAQTnGenicGdivHM1ECfwREd6QxfWoCZhEK6GUAC",
+    "mint": "NoEncontrado",
+    "liquidity": 10.55,
+    "priceBuy": 0.0815827,
+    "priceSell": 0.09789924
+  },
+  {
+    "time": "2025-08-15T23:44:39.232Z",
+    "signature": "65M4R6vf3KTdX6P1tRTxzNAHkheVbvSfJf4BKtQtiqJ1jL5tPSwAQ8F3XNYcYQDxVJt44zon2SJyL2gLYYezPfFj",
+    "mint": "NoEncontrado",
+    "liquidity": 8.6,
+    "priceBuy": 0.13963296,
+    "priceSell": 0.16755955
+  },
+  {
+    "time": "2025-08-15T23:44:39.239Z",
+    "signature": "eDQWAZmJqcg6tUa13aSS3TEf5RikMbKnEz8pHngcKDE9P7mtdMMooMhSzZDVDV9R4ZEauk8pdtpCi16r7omFt1e",
+    "mint": "NoEncontrado",
+    "liquidity": 3.54,
+    "priceBuy": 0.01373847,
+    "priceSell": 0.01648616
+  },
+  {
+    "time": "2025-08-15T23:44:39.246Z",
+    "signature": "3J5RtiAw6eDqK945hDi2pkBa1PYtmfMgG2syjgKSbQAwK2y4JBJsQSGc5XqPuWAMpYxfN7TWbcGEivqCNMm5jHuh",
+    "mint": "NoEncontrado",
+    "liquidity": 4.09,
+    "priceBuy": 0.03406002,
+    "priceSell": 0.04087202
+  },
+  {
+    "time": "2025-08-15T23:44:39.252Z",
+    "signature": "5dhkvnoNxx9kx6UsrWaD8Bh1KzTAwpvmNjEivaVJWoezyCVmHTpRMKmxB7wfTkSuUmEXSTDSjWRo6qSVJevYKgzA",
+    "mint": "NoEncontrado",
+    "liquidity": 13.3,
+    "priceBuy": 0.04241509,
+    "priceSell": 0.05089811
+  },
+  {
+    "time": "2025-08-15T23:44:39.257Z",
+    "signature": "N2vSniZ2x2NKcTyddCVJC8NnsioQV5VWjM1LVGrX7ypLb8r13et3TxfGboqm3jQWDnJeL29SGyDUjuxt8dLejZp",
+    "mint": "NoEncontrado",
+    "liquidity": 1.59,
+    "priceBuy": 0.07517053,
+    "priceSell": 0.09020464
+  },
+  {
+    "time": "2025-08-15T23:44:39.263Z",
+    "signature": "4o5yCx4Li1tursjVzWKU7unhk4DmZBuHyyPCXCZzPaL1qp9fRZJ6Vn3VNohMoc9v15qY1wCACfcmkCkRVgGBGMvT",
+    "mint": "NoEncontrado",
+    "liquidity": 9.32,
+    "priceBuy": 0.08105737,
+    "priceSell": 0.09726884
+  },
+  {
+    "time": "2025-08-15T23:44:39.370Z",
+    "signature": "5rG7m6mAKLPhBs6KkDuyTwhTeQMeqH6zc7BjNrmjiNK5cozZLi5UZjPuTEfsiT3k9CkhxCD4i1sSu95Dfp8JJrwH",
+    "mint": "NoEncontrado",
+    "liquidity": 9.2,
+    "priceBuy": 0.12722184,
+    "priceSell": 0.15266621
+  },
+  {
+    "time": "2025-08-15T23:44:39.400Z",
+    "signature": "MqA1UfFciUafJtgwCiufzNyk4y3tn3r2ts5wZkPVJn93XMzVGhEC12G2EFShq8JiRu14DFiQyTMowDBnMgzjBH7",
+    "mint": "NoEncontrado",
+    "liquidity": 13.41,
+    "priceBuy": 0.14461966,
+    "priceSell": 0.17354359
+  },
+  {
+    "time": "2025-08-15T23:44:39.407Z",
+    "signature": "1WnAkdMuDrDxpJNZTEcrfwJzyMXSyD3yaskuB9agzxaVKcaC8mhNzzqVLT8s6x6zDSsXrLBxSe7CQaBebR65sPL",
+    "mint": "NoEncontrado",
+    "liquidity": 10.21,
+    "priceBuy": 0.14375225,
+    "priceSell": 0.1725027
+  },
+  {
+    "time": "2025-08-15T23:44:39.414Z",
+    "signature": "479GFAe3FMGyKimwKoueoBPMsUzZpMov1YgYEXCjwMkFAQ2Lv4q2BmtojMtTiYL84zbtWt5VrPWPv9K9HQ19hU8k",
+    "mint": "NoEncontrado",
+    "liquidity": 7.85,
+    "priceBuy": 0.08977614,
+    "priceSell": 0.10773137
+  },
+  {
+    "time": "2025-08-15T23:44:39.420Z",
+    "signature": "1111111111111111111111111111111111111111111111111111111111111111",
+    "mint": "NoEncontrado",
+    "liquidity": 12.06,
+    "priceBuy": 0.04380194,
+    "priceSell": 0.05256233
+  },
+  {
+    "time": "2025-08-15T23:44:39.469Z",
+    "signature": "3hyYVLjX2NAt3vKz2X3zy2eoteCiuPs9L8LpnQ7v7CdwJyiuhNSz8wPBTUAmKXxygy48Y7fxe3ZgxCUQsFfjt8dJ",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.95,
+    "priceBuy": 0.14395461,
+    "priceSell": 0.17274553
+  },
+  {
+    "time": "2025-08-15T23:44:39.475Z",
+    "signature": "3RfJw6F88tpiig8ghaBrPSdj9UG28GmARxLqVhHpx9nJkh6taon6fzkN38BNVth5rwDsZyTfmK1Rb7LHVyZq3VyK",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.11,
+    "priceBuy": 0.07352796,
+    "priceSell": 0.08823355
+  },
+  {
+    "time": "2025-08-15T23:44:39.478Z",
+    "signature": "3MN85ZvLuDodNMxq2nWnmmRAuw88FxEqz1cfJBYhNKtFdadUrXo4GTDfjQHJ83S69AJ3x9ZMaosfg9Cpt3aGSHZM",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.13,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:39.486Z",
+    "signature": "f8d3Vg8LD4MfxuMqxt6f77wJdFD5xxu1XcmhXzMSbkKVogjUf1wanQ8Hak84jeVPuY2wWVNh3f4Bo2XugHPP3Kb",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.71,
+    "priceBuy": 0.11309745,
+    "priceSell": 0.13571694
+  },
+  {
+    "time": "2025-08-15T23:44:39.488Z",
+    "signature": "4DcxMGJLrhyfZpo85a4RbFxLapLGQ5gV5ynizp714MLmzsQMfm2Z8jfy1CW8Jq6fKL9UNDttApwnafGxyogzn7Mq",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.52,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:39.494Z",
+    "signature": "h1bK3MzVHBxvuo6gbMb5Wbg4qZtSbS4oQAc3crYYeFJ2uM28qH2GFCohvPpkfh4Hsv77vv1LgQenE5Npmko6wG4",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.73,
+    "priceBuy": 0.06173855,
+    "priceSell": 0.07408626
+  },
+  {
+    "time": "2025-08-15T23:44:39.500Z",
+    "signature": "KC3X3BQAv5zAWDFeQmvh5y69SyGGvrwgj6nNn8QHvhGX2YHJXQr4aSYRjYPh2GHabCke9ds8PRkS6r9pY4jCw9p",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.56,
+    "priceBuy": 0.1070037,
+    "priceSell": 0.12840444
+  },
+  {
+    "time": "2025-08-15T23:44:39.506Z",
+    "signature": "2sa5uG99CG5BWri9iTdQwcEjPva9EJ5YFHJtuQypJVPhcHCP9ma9tak6w6QFm6DBALSjz46uNfHZnoHVZ7Cmkyi2",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.48,
+    "priceBuy": 0.02064231,
+    "priceSell": 0.02477077
+  },
+  {
+    "time": "2025-08-15T23:44:39.512Z",
+    "signature": "2f7YKqDd75dhxULGULJVbTPfGcU47SaY41KmKSuwiYtcThrjgYmcnhVcoapXksNTU2bMmP983wu2jnAWuUqPwCbu",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.45,
+    "priceBuy": 0.04315751,
+    "priceSell": 0.05178901
+  },
+  {
+    "time": "2025-08-15T23:44:39.518Z",
+    "signature": "H1sknzvy9QbXyvFhW5Jffb7uTxDByDN2YGzF1z7AeRJDuuNZAhP8koFQsi6bPLY4tKqeDw4f1pCZwo1CyEseL97",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.98,
+    "priceBuy": 0.12481957,
+    "priceSell": 0.14978348
+  },
+  {
+    "time": "2025-08-15T23:44:39.524Z",
+    "signature": "5rq9JUmi1YwKKWuzFj44roz4jyENAoF58ych6H5jYAdo9ZX6ArfECRtqmAKdEDJoifaciEE3HKkdrRbw77NJWDrA",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.58,
+    "priceBuy": 0.05326023,
+    "priceSell": 0.06391228
+  },
+  {
+    "time": "2025-08-15T23:44:39.530Z",
+    "signature": "26UrxVGyTPW293cViAQ5SejgDfcc9npA5UYfYH6VCsWuMRFYmhwDFdjAob3gqqDbf51aE9Lu8vFCzFurjav1hh8k",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.8,
+    "priceBuy": 0.12461378,
+    "priceSell": 0.14953654
+  },
+  {
+    "time": "2025-08-15T23:44:39.536Z",
+    "signature": "613pKoRmXGnadcfFQBmZrWGjjfYnrmTt9aqgdbf54vTgBZYWGtYLcLfej4hZZ8gBJkMw5vxgUFcg5XKcNQ2tYgCa",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 14.3,
+    "priceBuy": 0.11153168,
+    "priceSell": 0.13383802
+  },
+  {
+    "time": "2025-08-15T23:44:39.539Z",
+    "signature": "2uUBD33zWzZfoRywHFa5QgQkg6CxT5PmRgX5WpwE8YnTUBirFvf9XkWyybNzc3AY7RcP2osLTF1uh9PCnkg52g7f",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.14,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:39.547Z",
+    "signature": "CGZw5G7NcVnToYSsd22XN41daovjqF8zCWsu2kn2haiEZ7t9vbLyc1vr2LopMJ7qgk9TMWd3dbL13VeWa7CPNZq",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.18,
+    "priceBuy": 0.04342572,
+    "priceSell": 0.05211086
+  },
+  {
+    "time": "2025-08-15T23:44:39.553Z",
+    "signature": "31HQE5SeC9VQFa3XNtkT8xH7hnjt4ziXhxMVZn4TfuWNPnbrZxQLneVqy4mHWaeaWauGbJZcVXDNuzeGFb97XWiM",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 6.56,
+    "priceBuy": 0.02097513,
+    "priceSell": 0.02517016
+  },
+  {
+    "time": "2025-08-15T23:44:39.559Z",
+    "signature": "5YsixK3EujDozDUqjeCbGqvV3QqDCb1CeY5A8H1AEiNfTfGHqEjXiVv7E9ykDyEDDuRuvwYbdgHawVSRQnuocPFs",
+    "mint": "2M86GVGn3AHgAX9afQrYeSEETJBs9qmDtxb3f6kEa87H",
+    "liquidity": 14.1,
+    "priceBuy": 0.03064974,
+    "priceSell": 0.03677969
+  },
+  {
+    "time": "2025-08-15T23:44:39.565Z",
+    "signature": "5aLh6176Qp2TxNd63knmDqv6SZfjAgDzapUtMuAvCnchpQdta4xgZmnJjA9rTnZtikXTSaMmmjCWXRzttBTbMo5h",
+    "mint": "6vAZugQRu4Gx2V3LNtwzbngMEpQMRUSt8cdMKVEhSxyk",
+    "liquidity": 7.96,
+    "priceBuy": 0.0317228,
+    "priceSell": 0.03806736
+  },
+  {
+    "time": "2025-08-15T23:44:39.571Z",
+    "signature": "o5EiPpj9LUvNsU7e6K8Nj4nk3Tnkxp2MQLMX3Zo1iEZ8dUwB1PCG4apHfJQ4zkEzxWQj2ZGQ3jmSP14R1M92U1G",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.49,
+    "priceBuy": 0.00905804,
+    "priceSell": 0.01086965
+  },
+  {
+    "time": "2025-08-15T23:44:39.577Z",
+    "signature": "4uPhubiLtJjB7ucq13xCQ8RxgzzUHB8wj73n3tEocx1Qgvo38C7KwiKX1EMFaxN2dox4XyiCMX9adDNT5YA9k4gs",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.97,
+    "priceBuy": 0.13439497,
+    "priceSell": 0.16127396
+  },
+  {
+    "time": "2025-08-15T23:44:39.586Z",
+    "signature": "5kA8j2QGxcuFMMz3ozuqBm9mccjegse1shDfwTuRJfvg4UzTbanvZQtgbX49yUbiUGTtntn1tNsN5rtH8Nut8XnW",
+    "mint": "NoEncontrado",
+    "liquidity": 13.83,
+    "priceBuy": 0.10931282,
+    "priceSell": 0.13117538
+  },
+  {
+    "time": "2025-08-15T23:44:39.592Z",
+    "signature": "3ZkC4QZM23ndrjLCdznathwzEmQCpgqZDdQuK1c71pevi94MaXsG39gq5fzSGXiGot3UjpF7FPoga1UNXvxHPdT4",
+    "mint": "NoEncontrado",
+    "liquidity": 2.98,
+    "priceBuy": 0.05864149,
+    "priceSell": 0.07036979
+  },
+  {
+    "time": "2025-08-15T23:44:39.598Z",
+    "signature": "4kSpR87bzr8iPppX98Y4WkrLZeeCtLYRW2WrWTNHdCzGz8ZTGuVYj7FXrRUDTFgWQi6DtASiTGKuEFV24aevwVVT",
+    "mint": "NoEncontrado",
+    "liquidity": 9.69,
+    "priceBuy": 0.02363986,
+    "priceSell": 0.02836783
+  },
+  {
+    "time": "2025-08-15T23:44:39.604Z",
+    "signature": "3WywKSQNEuVBQfb6hnyrew3vTiQuMF1xCpKJbtXxMn6sx5iSrE6WadmWvgCiZ5i3LWBEd6zDANVDXSJBu1niMYJ2",
+    "mint": "NoEncontrado",
+    "liquidity": 2.65,
+    "priceBuy": 0.00646674,
+    "priceSell": 0.00776009
+  },
+  {
+    "time": "2025-08-15T23:44:39.611Z",
+    "signature": "9RAA2B8gs9n4Gb6Mb85GkV2umcqyVb3SyZVZuHB3nkhJHeohQVWpgnYhmk9zwava4WRBX7pazX9oyYsgf7wQm1c",
+    "mint": "NoEncontrado",
+    "liquidity": 5.55,
+    "priceBuy": 0.03841249,
+    "priceSell": 0.04609499
+  },
+  {
+    "time": "2025-08-15T23:44:39.617Z",
+    "signature": "3g6e2NS2UYdgrvsD7NcCaPzfN2nSxZp2mycmreLLNrgJgsttWpDeS8kE8gRhREoAe9r5UQJGrrWviniVWvDW7oCG",
+    "mint": "NoEncontrado",
+    "liquidity": 3.02,
+    "priceBuy": 0.08863027,
+    "priceSell": 0.10635632
+  },
+  {
+    "time": "2025-08-15T23:44:39.624Z",
+    "signature": "N8iwzu5LBwCR2TuRZBGCQPeYxW5NiqTWZf1g43aa3edMgcso2jyDtqy4rukgSHC7beGdqEoq6pbhrpqut3PbSpf",
+    "mint": "NoEncontrado",
+    "liquidity": 8.9,
+    "priceBuy": 0.01542919,
+    "priceSell": 0.01851503
+  },
+  {
+    "time": "2025-08-15T23:44:39.630Z",
+    "signature": "5DLsKBzug1kPgwUnBAHMcABDg2SEEjeAasJy9ZJYukCMLRP2MxPRgtuJNHS7dAUVUtaVQm2nwEdjDi2jfFuo5akh",
+    "mint": "NoEncontrado",
+    "liquidity": 8.58,
+    "priceBuy": 0.11780039,
+    "priceSell": 0.14136047
+  },
+  {
+    "time": "2025-08-15T23:44:39.637Z",
+    "signature": "2HVXU1HSLLnFDDQYs85qRQYpHNdJfHtpECBLJBSCWZ15NnKd4U2RUegwdaQYAKsrgWVSdXzvmXvVDtuYsRbaWxt",
+    "mint": "NoEncontrado",
+    "liquidity": 10.86,
+    "priceBuy": 0.11507304,
+    "priceSell": 0.13808765
+  },
+  {
+    "time": "2025-08-15T23:44:39.643Z",
+    "signature": "4cRFuyJhjPuUSm6Z7U66ZWL5wBDn5Qe15zVczTKA61bPfJuC8Ag5NGNs4yzcM1LnVAimNmmwePqwpFs7qNXg9DCn",
+    "mint": "NoEncontrado",
+    "liquidity": 1.42,
+    "priceBuy": 0.13796001,
+    "priceSell": 0.16555201
+  },
+  {
+    "time": "2025-08-15T23:44:39.650Z",
+    "signature": "3J2E9LTuEqUe29YKkMSvVNzZGxAjLsvv9yWyYXvzrojd5gDpE1RFGd4u4DBBSgapK8ToZpkz5QFmAk21tLTMLTMW",
+    "mint": "NoEncontrado",
+    "liquidity": 5.06,
+    "priceBuy": 0.01503635,
+    "priceSell": 0.01804362
+  },
+  {
+    "time": "2025-08-15T23:44:39.656Z",
+    "signature": "3XN4eYLVSx5sBFLtsn6UYQGaB1M5Cq7m5cixb7SyidwpmiDjRenkkQy85jR8P6CDijjuL16Pw7T2hwPRVVvtPYNo",
+    "mint": "NoEncontrado",
+    "liquidity": 12.92,
+    "priceBuy": 0.02938163,
+    "priceSell": 0.03525796
+  },
+  {
+    "time": "2025-08-15T23:44:39.663Z",
+    "signature": "2qVrKMcmnKERvQaK8zWSU84oNZN3bEh74txEw5wu3pb7253s75GZ83UoUNjuAjrtBK2Kzj6PFEgmfyQcicKVGX6M",
+    "mint": "NoEncontrado",
+    "liquidity": 14.29,
+    "priceBuy": 0.05570699,
+    "priceSell": 0.06684839
+  },
+  {
+    "time": "2025-08-15T23:44:39.669Z",
+    "signature": "4us7aLi83Y7KvtFPkB2REX9fAFxrZYtqXgBjD2vJLvdZR45DzLjzepC7mVf84tTZbftmEmNmoQGhgE2vA9GcLaFk",
+    "mint": "NoEncontrado",
+    "liquidity": 8.99,
+    "priceBuy": 0.08006568,
+    "priceSell": 0.09607882
+  },
+  {
+    "time": "2025-08-15T23:44:39.675Z",
+    "signature": "5u95xF9rspp3RSXLhFVpoWBATith7aRJtjvqhGpRmSz5wqREPJrovSTzGq67aCd9iVXRhmfhG3JGth7R8yVGz86B",
+    "mint": "NoEncontrado",
+    "liquidity": 8.87,
+    "priceBuy": 0.06061566,
+    "priceSell": 0.07273879
+  },
+  {
+    "time": "2025-08-15T23:44:39.682Z",
+    "signature": "rS82oUawfvi6u4Ugm6C5RsqALNaYYN22zcjaSroFpewfKahVHF3HxPFJaYTFnQwvKQsRN6nRNawJ4SqR3HUk7rj",
+    "mint": "NoEncontrado",
+    "liquidity": 9.23,
+    "priceBuy": 0.02825102,
+    "priceSell": 0.03390122
+  },
+  {
+    "time": "2025-08-15T23:44:39.688Z",
+    "signature": "5EAvfbEWyB5WwfW9Ua4qmcfxw5S9V16kdh9rNbRTXmBxkx8vbdRxbxN5cC1x6hw35TzHe5DsCzK9A4iCuVvcPgyY",
+    "mint": "NoEncontrado",
+    "liquidity": 12.37,
+    "priceBuy": 0.00686284,
+    "priceSell": 0.00823541
+  },
+  {
+    "time": "2025-08-15T23:44:39.695Z",
+    "signature": "23XzYLYhYJZyKssfFndjNWdQ1vzivnYEMxWzNDpH1rbbXHquVmcYAdJ6et5VpQAvxV2TAyfJUs79h5vLoEYmVpay",
+    "mint": "NoEncontrado",
+    "liquidity": 9.49,
+    "priceBuy": 0.11965357,
+    "priceSell": 0.14358428
+  },
+  {
+    "time": "2025-08-15T23:44:39.701Z",
+    "signature": "Fg6wfqgbcj3Rk2JDjpusmHCgBT4LU5YbXEUQmcqsjcBvgh5JukSX682iMNxtBvmQX8EcQQTjdyFcnQeaCfuXW9p",
+    "mint": "NoEncontrado",
+    "liquidity": 6.33,
+    "priceBuy": 0.08737393,
+    "priceSell": 0.10484872
+  },
+  {
+    "time": "2025-08-15T23:44:39.708Z",
+    "signature": "cPggbHxWRN6Eo77ZACUHWqbfkwKPDdUSzCJ6vsv9KDgB3DGNkXjXcXa5w9uxRgaeWXoHWHDBdEygqZMXbDmE4yg",
+    "mint": "NoEncontrado",
+    "liquidity": 7.07,
+    "priceBuy": 0.09090857,
+    "priceSell": 0.10909028
+  },
+  {
+    "time": "2025-08-15T23:44:39.715Z",
+    "signature": "5f8g7KQrqFP7nTF4XNQtGT9XSkf3KJJHajXEJRZn4iLyqEa7wStCDYjf1jhoEtFyNpQ1BiBthHLHh6YdM8k6qRAu",
+    "mint": "NoEncontrado",
+    "liquidity": 14.12,
+    "priceBuy": 0.1327889,
+    "priceSell": 0.15934668
+  },
+  {
+    "time": "2025-08-15T23:44:39.723Z",
+    "signature": "3GRpcifdoNGSUptysdz53oq6QUB9HX6jVDLP8zhDgeJq8bKD2zcZhE2g2oBBA9smRbgYB9T3mgugYSbysLYYGXZi",
+    "mint": "NoEncontrado",
+    "liquidity": 5.16,
+    "priceBuy": 0.13782086,
+    "priceSell": 0.16538503
+  },
+  {
+    "time": "2025-08-15T23:44:39.850Z",
+    "signature": "5Dt4SiPyuQFm7nRt6yPWKb1tsd7cpaLMowHJVd9wcNrm2odREzDHQ8rVz5dTBVW3bX1PWUCZN8Y5H8mdsz8baSf8",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.67,
+    "priceBuy": 0.12641159,
+    "priceSell": 0.15169391
+  },
+  {
+    "time": "2025-08-15T23:44:39.855Z",
+    "signature": "24QEiYrW3NijxcFQcBgWaUH34bRnbym1YSJAAaAy8DVroEtw8Tj5kb7QsSirF3ueSXkgXJ6t2bffsUH2fumbRX7U",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.71,
+    "priceBuy": 0.13854688,
+    "priceSell": 0.16625626
+  },
+  {
+    "time": "2025-08-15T23:44:39.862Z",
+    "signature": "2uaN1keezMEzxffz9ABd23SDuzBMdDrt72fozwcTP2qTwUa4QLa16Ubhk8FB4gEkfeJL6aqCxdr3pVdZ35XsK3AD",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.56,
+    "priceBuy": 0.0519586,
+    "priceSell": 0.06235032
+  },
+  {
+    "time": "2025-08-15T23:44:39.869Z",
+    "signature": "2EhGvqfx9351kqgMas32zPe47DuU7FxeQMNxfB27AnygnVxpZc3Q5EXjysdKe6Jq28q8dvcQ1PjvnYEEWHAkA6AE",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.39,
+    "priceBuy": 0.14204848,
+    "priceSell": 0.17045818
+  },
+  {
+    "time": "2025-08-15T23:44:39.875Z",
+    "signature": "3KWQxN484gnqi78DQZYaWyAiaEfrveHdhjDXNsGRbsdu5ztCiaGXS4k2xasTZ8rsAD1sQd4zjbb8c35H5C2E1WMw",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.24,
+    "priceBuy": 0.14942656,
+    "priceSell": 0.17931187
+  },
+  {
+    "time": "2025-08-15T23:44:39.879Z",
+    "signature": "4u74QwPG2FbHjdBaBKaQcaqpeMdLmQCt8od4pdJJShDi5PDZoW3anqA3LFjCcXy2j95tpyjk9G9LcTHCHgGxFLtC",
+    "mint": "NoEncontrado",
+    "liquidity": 0.7,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:39.885Z",
+    "signature": "3xCGfKHW4Jqf4DpSWL9EnVy5p4TbrvTk8yPtjCTnrsmM7pFr613KuHXkoFXP6oALa2vH2N6cMh5bU8aXSjGhGbqi",
+    "mint": "NoEncontrado",
+    "liquidity": 7.34,
+    "priceBuy": 0.09181964,
+    "priceSell": 0.11018357
+  },
+  {
+    "time": "2025-08-15T23:44:39.891Z",
+    "signature": "3RarT97Hr8RkkKdMjfkXsFDJoiQWmHCWhNBry7DtGV3EpDNRTZxe1VeuQneZz6GD1c5mSjomCiAxtBpE97ySkC42",
+    "mint": "NoEncontrado",
+    "liquidity": 13.27,
+    "priceBuy": 0.13160524,
+    "priceSell": 0.15792629
+  },
+  {
+    "time": "2025-08-15T23:44:39.899Z",
+    "signature": "4Ahiizxf2zCSq269nrhrTZvb3ciJHhwepDbVHGuBHd5bxknwjBEV9yiwJ1kjfvzbzs8WuxX4MWFRgdr55KTzmtam",
+    "mint": "NoEncontrado",
+    "liquidity": 3.49,
+    "priceBuy": 0.13270001,
+    "priceSell": 0.15924001
+  },
+  {
+    "time": "2025-08-15T23:44:39.905Z",
+    "signature": "3vKnCniKeTzXrsSFznpV4Z3eP9dNpzciYKW8rXHjJXPnDuk2oT1Gp9BtiRD7JepVwioxmaQULjzzdrQiSTUctjzh",
+    "mint": "NoEncontrado",
+    "liquidity": 9.87,
+    "priceBuy": 0.06755823,
+    "priceSell": 0.08106988
+  },
+  {
+    "time": "2025-08-15T23:44:39.908Z",
+    "signature": "5fR5wxYKmSAjGZgP9Jhrvu2gQf1z855HC34K23DHjhg6SdCiyycGweWMgBLnxt42Zau9Z7E3HRH2SGwAWqJfm2Vj",
+    "mint": "NoEncontrado",
+    "liquidity": 0.35,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:39.915Z",
+    "signature": "5bmdLnsT1Y1kUN3iwsRVQzN8Zjy1WRwkgjrJnUt7P8EgaC3f2PJYr4Sc7TXG3RKGRJkcAXY2fNRyfeRzRQCXNhWL",
+    "mint": "NoEncontrado",
+    "liquidity": 1.94,
+    "priceBuy": 0.08197435,
+    "priceSell": 0.09836922
+  },
+  {
+    "time": "2025-08-15T23:44:39.922Z",
+    "signature": "9pf1AqrPNvemKMJV2XQYjLDXetFwdybPDx9NaPpSufB4t9uxnfeXg9fjQZd1Zq9ABT92sFMiftCq8u47p5CU9jz",
+    "mint": "NoEncontrado",
+    "liquidity": 7.73,
+    "priceBuy": 0.05766123,
+    "priceSell": 0.06919348
+  },
+  {
+    "time": "2025-08-15T23:44:39.928Z",
+    "signature": "5ZnoJUG6nANaa4JrAnzCs4KyFJKQpC66q2CSKUJRYdeRTyrPgtz2k8vyzLL7BcwJcqqLvb8FwWUREmpavJHp6886",
+    "mint": "NoEncontrado",
+    "liquidity": 12.81,
+    "priceBuy": 0.070474,
+    "priceSell": 0.0845688
+  },
+  {
+    "time": "2025-08-15T23:44:39.935Z",
+    "signature": "5euBj7k4f222jEVdn6Y7CsqmnWtWGJKQEaxXCfi2LtHbr7MDminJXT11usddGvvLQdxVeXvp5ykvfDtGrSTw9SJG",
+    "mint": "NoEncontrado",
+    "liquidity": 2.41,
+    "priceBuy": 0.103072,
+    "priceSell": 0.1236864
+  },
+  {
+    "time": "2025-08-15T23:44:39.941Z",
+    "signature": "3jzZufxwwPprkaZw87uKYfARSvQtCCaTHLmXy5tdPX3LF4Puswtm55gPjMQxCgDpFUwzFarKF3UB2Z65C7sKmAGT",
+    "mint": "NoEncontrado",
+    "liquidity": 8.82,
+    "priceBuy": 0.02583584,
+    "priceSell": 0.03100301
+  },
+  {
+    "time": "2025-08-15T23:44:39.948Z",
+    "signature": "2hE7CgHYn2MXuAWoafKrdow2ihkr3Ny4XPPrc2oKZU5F6AEukTisai8cA9uX7Pt4nSA3j7K8gDkPWp7e5BQHpjud",
+    "mint": "NoEncontrado",
+    "liquidity": 2.49,
+    "priceBuy": 0.01829789,
+    "priceSell": 0.02195747
+  },
+  {
+    "time": "2025-08-15T23:44:39.954Z",
+    "signature": "maDAdbSecE4KwF5PCKTwY2mYqu81fAyuiLEh8Z7795Wb9R7Nhxpuke9QPLjRo8MuTrSXeinncYuhxiTKonh3DuT",
+    "mint": "NoEncontrado",
+    "liquidity": 14.44,
+    "priceBuy": 0.12882355,
+    "priceSell": 0.15458826
+  },
+  {
+    "time": "2025-08-15T23:44:39.960Z",
+    "signature": "5m8DJwg8nnbrHSvh5dbmEpUgDTeKv92vjcRKdYqVosHkKVXeoqRPobgrNEXu6e2UkhRaeD8VeKWyNjqq6ow8W6ox",
+    "mint": "NoEncontrado",
+    "liquidity": 6.66,
+    "priceBuy": 0.0118908,
+    "priceSell": 0.01426896
+  },
+  {
+    "time": "2025-08-15T23:44:39.966Z",
+    "signature": "5Ls5eX3FEgmGfKQsp4xJtvKKmv7g9tBs4t4t7BAekk8bb4QfCw7wkDwyAwSxuVMUsW5sAxuoBvHXEyuhsMjiQbDV",
+    "mint": "NoEncontrado",
+    "liquidity": 2.39,
+    "priceBuy": 0.07554743,
+    "priceSell": 0.09065692
+  },
+  {
+    "time": "2025-08-15T23:44:40.237Z",
+    "signature": "49vY7oqFMT6JJkgcYo3JU5DCXahcZCNovcNcJEFGDEJYPfppSLZMgghPx9qb24YsWx6HS4dS9kReYaWyCkcTCjtS",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.98,
+    "priceBuy": 0.0722021,
+    "priceSell": 0.08664252
+  },
+  {
+    "time": "2025-08-15T23:44:40.244Z",
+    "signature": "3PAoZvuDBnruqYtmB2uJZLZzAoC7Mc1eKpxBdrdtM41ipHR2XJHi7g86xSNie2TA5DAvdBvQwHEd12HW4b2FQvC5",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 14.88,
+    "priceBuy": 0.14879702,
+    "priceSell": 0.17855642
+  },
+  {
+    "time": "2025-08-15T23:44:40.252Z",
+    "signature": "2XdxwcWRfmKwePtSzCDMQ34gPdT79aN5dTmXVDdWffY2RGrhRTehRigF7XFCikyNpvJJhbpfPGvWtAqMAtDRxKHE",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.31,
+    "priceBuy": 0.00703644,
+    "priceSell": 0.00844373
+  },
+  {
+    "time": "2025-08-15T23:44:40.258Z",
+    "signature": "56bWV4srJa22ooHNj4MqSisarsrh3KSgHEMd1Ab6gTBKhFTPquZUQ6d6eMu7DyriurY63rJ1VP3CQr9ed5zDAdAd",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.53,
+    "priceBuy": 0.07834426,
+    "priceSell": 0.09401311
+  },
+  {
+    "time": "2025-08-15T23:44:40.262Z",
+    "signature": "qdwavEk82esMDJCSHEpbJkdLvtS8C6DApqZdqpDGHn1z4Cpg2YKUKk5AWeRAMDEJbE4L9XUTymRPLP6dfc1TEN3",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.38,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.268Z",
+    "signature": "53AVwJXYvicNGx7ryXXxktDTAjU2GVTFVcv5uoj6faCrBjvtYwGRKZMEbyseinzRUmp5HeHrX3N38Wy1uwPTaNgr",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 1.08,
+    "priceBuy": 0.14481596,
+    "priceSell": 0.17377915
+  },
+  {
+    "time": "2025-08-15T23:44:40.276Z",
+    "signature": "5JPF1BFSrPZA16ZnH6mJU3okQL9vQKvEFmQEAKREnr3DYZ4jdqHH46Qz2jptTsyKwTRPXoao7BuBwwxkKub99rU4",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.62,
+    "priceBuy": 0.03552573,
+    "priceSell": 0.04263088
+  },
+  {
+    "time": "2025-08-15T23:44:40.282Z",
+    "signature": "2DxfcGupRaxo2t4JYSmEsjftX1H3a8woSECPgecFHTWaNr5yYTfSiYhsLF8a7ZPcXxmpoquaoPdpiqTqX8bAe6m2",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 13.36,
+    "priceBuy": 0.09781586,
+    "priceSell": 0.11737903
+  },
+  {
+    "time": "2025-08-15T23:44:40.289Z",
+    "signature": "247HrVHct8Bj14q4CLdqho46Vy8gNLb75FCbqykdGbhBZEcKHRNFenVrFFNUzSdzhC69JoXDoSyt34YRv6KHDLGR",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.05,
+    "priceBuy": 0.10157206,
+    "priceSell": 0.12188647
+  },
+  {
+    "time": "2025-08-15T23:44:40.295Z",
+    "signature": "2ZstKDcLSUCk4M4DjfMSWxJLTV8sod7PtEoQuB8Q7RfHRwZUvsPCdD9FAtSzedygAiZAfL84YvWHaiJQxE1KAWy1",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.76,
+    "priceBuy": 0.11244574,
+    "priceSell": 0.13493489
+  },
+  {
+    "time": "2025-08-15T23:44:40.302Z",
+    "signature": "2fNc4PpZAbkWXMtN7Wrf9WmCZZ6TdDyHbWsNzsqQucoJzNh7fZxhJq4YLoyGAR5GS16psB2wsA4HwQPc7Z9dUM4B",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.57,
+    "priceBuy": 0.13402243,
+    "priceSell": 0.16082692
+  },
+  {
+    "time": "2025-08-15T23:44:40.309Z",
+    "signature": "2EDFNzTCF53qStC34bTnRnhWkswey1PYmZkdefrD9DWd6qYZVTr6SKhRFqLCZ44YL1ysDMi24oN2DJAkk7cu26ca",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.42,
+    "priceBuy": 0.13257729,
+    "priceSell": 0.15909275
+  },
+  {
+    "time": "2025-08-15T23:44:40.316Z",
+    "signature": "tPG4oTZzVbw2ff6pugnAn75eYVv1uFs2oz7ooqnmU3GccqBDftX3HxU8jH8JvfY4JUW8w5xDQkpVobBF24Nj6ZH",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.47,
+    "priceBuy": 0.03906007,
+    "priceSell": 0.04687208
+  },
+  {
+    "time": "2025-08-15T23:44:40.322Z",
+    "signature": "5m5hU5gGhg9VXGPa5doVDsagy2xTbw231YMyxxqNmZAtcK2RA9BhAAh7Fxf7TWGTQ8GwtFum7sxy4VL7qHWwRqXz",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.65,
+    "priceBuy": 0.01433102,
+    "priceSell": 0.01719722
+  },
+  {
+    "time": "2025-08-15T23:44:40.328Z",
+    "signature": "3MYrbf5RcoKLn71DbyjQ8iK99nBB5VFu3w7JAojrXLWvtFzYiMbXtREKfZznYxrE1A9XsVE2LGjGUveSFWBqJThk",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 1.13,
+    "priceBuy": 0.07929185,
+    "priceSell": 0.09515022
+  },
+  {
+    "time": "2025-08-15T23:44:40.334Z",
+    "signature": "7Mk22i3tuJjXtRxBbtEU6UXQyRemJuViE1SEKeYPBKn3GWepAwcLBnFzQMJy8Asc9teVMZZmmk55cSZmmUUDwzH",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 10.11,
+    "priceBuy": 0.0408699,
+    "priceSell": 0.04904388
+  },
+  {
+    "time": "2025-08-15T23:44:40.340Z",
+    "signature": "3oGzJzuWX5jDb7nbXg9nSTkTCpq73yoW6To7WLP8KxgzqEdqNZhqhqd49gNsynqVQUJXDD4NaqA4AMDGFXr8u5N1",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.35,
+    "priceBuy": 0.13277047,
+    "priceSell": 0.15932456
+  },
+  {
+    "time": "2025-08-15T23:44:40.347Z",
+    "signature": "65k5FRLEFeSXbQiKNtdYSk7LabCfDaveFhAAmYDmNGhQf6iQeHfWcQK9jhP1tDGB79UZxd52s5jvQrRXzp4pT9DD",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.84,
+    "priceBuy": 0.07665417,
+    "priceSell": 0.091985
+  },
+  {
+    "time": "2025-08-15T23:44:40.353Z",
+    "signature": "5zUREYfzBjMb9ySBRq8yt5czcGG2eQs63wbWLc1XifE6P2AhrCP22skvWUre4qYo3n81TxozFe2FSKP83xHt7Cow",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 13.32,
+    "priceBuy": 0.03689529,
+    "priceSell": 0.04427435
+  },
+  {
+    "time": "2025-08-15T23:44:40.359Z",
+    "signature": "4WWg2xTffGzPAj2u5PgV35cjt1rU8TPByAVni4ypv4gtvR3fQYGdZLYJ95ap5weHpv9oaDSVpgkEvgVznwZeMuKq",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.42,
+    "priceBuy": 0.07646061,
+    "priceSell": 0.09175273
+  },
+  {
+    "time": "2025-08-15T23:44:40.365Z",
+    "signature": "3zSgTjmAB3GUCmwbQSxdX7tHHn9aPgJure343GRoJB4tcUyuYKVB7KSqVTpZJhZwFQL5nwWSjA7BDBgZRxYixxa",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.67,
+    "priceBuy": 0.14832991,
+    "priceSell": 0.17799589
+  },
+  {
+    "time": "2025-08-15T23:44:40.371Z",
+    "signature": "2uB2VXTdK5iry7FUfVBXFUCVWe85kGZ6XucudAqC4ATqJkBiJp6LN5Atcj9Tc8hgufFJZZmEnW54QJvHpTCK97JV",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.72,
+    "priceBuy": 0.08233432,
+    "priceSell": 0.09880118
+  },
+  {
+    "time": "2025-08-15T23:44:40.377Z",
+    "signature": "3V33se2fQpq4QG2qcLbptKutSmthEqgUwNgxYUZV72wFgD3WXHgzXvms2jK3Ls72FUmanwc7hcX5Z47nyFEKqd4J",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 1.67,
+    "priceBuy": 0.0090318,
+    "priceSell": 0.01083816
+  },
+  {
+    "time": "2025-08-15T23:44:40.383Z",
+    "signature": "5USLFoJ29VtPYt6x8gTnpk5MHyutAfKnMK4wa1VmDvPWSyc5U1pAcG1swzoWkZmTk4Lqen6B662VZsAwWu98Ypou",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.82,
+    "priceBuy": 0.14799472,
+    "priceSell": 0.17759366
+  },
+  {
+    "time": "2025-08-15T23:44:40.390Z",
+    "signature": "5Rq8Xdbs9RhNnhGVQDbNYJfRR2xhUeGSSeV86uwQe8awCMyKAzNnycXt35joaYdZctAGSxSa2rXfK6zzxc19RbSV",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.24,
+    "priceBuy": 0.05874563,
+    "priceSell": 0.07049476
+  },
+  {
+    "time": "2025-08-15T23:44:40.397Z",
+    "signature": "5EHJeiisWZewTftBzmnNJGTtn4LzhFq8pWXcL8r9thC1Z51TWy7uMSokU3eNoUR4o5jweESjYANGbAbQYKFSu9wz",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.75,
+    "priceBuy": 0.09331973,
+    "priceSell": 0.11198368
+  },
+  {
+    "time": "2025-08-15T23:44:40.403Z",
+    "signature": "4gmQw26CX9nt1y5tVKKFZzvSxFn8T2JnS8JRJFKLpHyhxtysHEGwnFFNMgoReZ6fbqxYDkPN3gJwsbojmJxuHeRB",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.13,
+    "priceBuy": 0.11312842,
+    "priceSell": 0.1357541
+  },
+  {
+    "time": "2025-08-15T23:44:40.410Z",
+    "signature": "56hNK5uZE9DFRbeevafRezLPdCCyzdraFd2UudKRHSdrxdidAT38aABuHjx92xVTnH76rdZbsEGMzz94AsAXtWsi",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.91,
+    "priceBuy": 0.05310687,
+    "priceSell": 0.06372824
+  },
+  {
+    "time": "2025-08-15T23:44:40.417Z",
+    "signature": "2iXdgGQtdEm2sceY5zQDcLpsGvBjTZECDk1EzUc7PLUbHbdAmXuMnLdJejW1rBMRG2SmMcfZKUdLNB3yYFHaaRBh",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.43,
+    "priceBuy": 0.01881455,
+    "priceSell": 0.02257746
+  },
+  {
+    "time": "2025-08-15T23:44:40.423Z",
+    "signature": "4W7UK41W8g8FsSW6dmCrrWhp4ziRV5r665CrmLDGsnaNFZXgPdWgpFJviT3gSQVYnQrh76mhoAa6s5TQexLwT7Gt",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.73,
+    "priceBuy": 0.01682855,
+    "priceSell": 0.02019426
+  },
+  {
+    "time": "2025-08-15T23:44:40.430Z",
+    "signature": "UZcSrXGv6uBVUcpR5zAhrJkiufU1TRNb3LmauuSsG5DAmVsBzi1m3r88Fsb2WHHARvvgE6dedAQJZ1hyxGeEm71",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.36,
+    "priceBuy": 0.131925,
+    "priceSell": 0.15831
+  },
+  {
+    "time": "2025-08-15T23:44:40.436Z",
+    "signature": "3ZPjLimF36L4nBfWHHNsuUDUQGQVkvbzh7K5LgTUeRAWFbZzNw2H1RYvmRZ3RTVDWuL4SEiSn7VMHotm8V1xXCpx",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.49,
+    "priceBuy": 0.13025416,
+    "priceSell": 0.15630499
+  },
+  {
+    "time": "2025-08-15T23:44:40.443Z",
+    "signature": "3yZmoQNGA9Db7XR6JazwvBA4fUJwLkw44KxudojkmUVpUY6VESggWwjxqhD1YxYh7vHrEHE7Uz1YRH97jJeBmoS8",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.91,
+    "priceBuy": 0.04818186,
+    "priceSell": 0.05781823
+  },
+  {
+    "time": "2025-08-15T23:44:40.449Z",
+    "signature": "3YjCdZ9tUo1rCWzHrWWXNhy3DhsMXmpz8gpVtxMxzy7cSXBCT3zVyJa9S2QUh5mDrkjpUBUKaATos2Gck89K7fFm",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.36,
+    "priceBuy": 0.0035824,
+    "priceSell": 0.00429888
+  },
+  {
+    "time": "2025-08-15T23:44:40.455Z",
+    "signature": "2bLUGmH8YFJFchpAb5SzKLoMD7kdN8Nz8oQ1jhoexufN54F6v4rPbnmjdZmHviG2k5EAM7HYjrCVcLpYxMY6wP1",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.48,
+    "priceBuy": 0.03256194,
+    "priceSell": 0.03907433
+  },
+  {
+    "time": "2025-08-15T23:44:40.457Z",
+    "signature": "5CvkEm5JTeAEpTPCX2JrK6D5Timgahu279XUazZYWfDznVyp5pNpTie4yKwtMYFmmSkhSJLzHFDWvMhPcJbXUUAP",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.52,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.464Z",
+    "signature": "39rHsLXpUoXF5iDmugthzPhUsjH5nn9ASn7TR1VP1VRbsVqdBiAFU6Ae8PzS19HoDHum9QTe4KThUuDjjEhrt8bP",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.82,
+    "priceBuy": 0.0425759,
+    "priceSell": 0.05109108
+  },
+  {
+    "time": "2025-08-15T23:44:40.470Z",
+    "signature": "4HEPXwwQJwTHd2ddShXRZuwhHp8MQVZAL9eBmKJw2SX2WYDiAM5pTcf4MtN6aQLM4CWDY75HqCP9DRostb4MKheM",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.78,
+    "priceBuy": 0.12814452,
+    "priceSell": 0.15377342
+  },
+  {
+    "time": "2025-08-15T23:44:40.476Z",
+    "signature": "3f7PEMqAhaGsjgoVzdtPGZ2oadWbDAENmAi6MJ8X3w3yvyuuCdn5uQT74WF2t7XTRBDLgDWXWjZxd9kDWZ2NpWUK",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.32,
+    "priceBuy": 0.14197258,
+    "priceSell": 0.1703671
+  },
+  {
+    "time": "2025-08-15T23:44:40.482Z",
+    "signature": "3dpbYBcD8ovsj6XUBuNYD9qwSKaiyDHN6ejCDkQK9qLFm16cJojGSWmPEaFVH66BXTgDnAW11eePDY2PBHRs3fKo",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.01,
+    "priceBuy": 0.02183464,
+    "priceSell": 0.02620157
+  },
+  {
+    "time": "2025-08-15T23:44:40.489Z",
+    "signature": "5SBCnq9ZxW6gRuJbgHQh7QWDdJg8gNyRS7ZVxmLUzp1VCHZPzpMnVFtmWAUH4eWSJMgQzkVVp3q4BQcMC6hwSn3y",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.12,
+    "priceBuy": 0.10615009,
+    "priceSell": 0.12738011
+  },
+  {
+    "time": "2025-08-15T23:44:40.499Z",
+    "signature": "5QCBGkquCjNuaVGov9wwb8Yh6HCzfyCa4m2XSkxz4WpMgAL6Jv1eDMYJ5BZRhyhG84z9wtTkLoq6J9WLQou65gqx",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.52,
+    "priceBuy": 0.0921202,
+    "priceSell": 0.11054424
+  },
+  {
+    "time": "2025-08-15T23:44:40.502Z",
+    "signature": "675641GBDHa45XTWFcvHNMSFwfb7zGVgWV2gUbFhewjpGXRfqUunCKBKFahmqBdfauc2QnEYG6XuViDpapXKuYZj",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.67,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.510Z",
+    "signature": "61cqzZZEoKc74oD6DgdjHJ5ErVLxz3yuG9UzAVy7o9qhMP9KN6BFTf4yN3xeV9KDELLm2n96GKUhBiKDBKLeL5Hn",
+    "mint": "NoEncontrado",
+    "liquidity": 4.13,
+    "priceBuy": 0.01735701,
+    "priceSell": 0.02082841
+  },
+  {
+    "time": "2025-08-15T23:44:40.516Z",
+    "signature": "4sNx9zMYApszH6dNfwvWgrinRRa6LukPTQCUpAj2uQtAcHKj2LFEgZLXizcGtPkh3yY1z4Jm4EFRNjanakjgmJbd",
+    "mint": "NoEncontrado",
+    "liquidity": 14.56,
+    "priceBuy": 0.09079332,
+    "priceSell": 0.10895198
+  },
+  {
+    "time": "2025-08-15T23:44:40.523Z",
+    "signature": "3jKve4tEBxKVXgXNS4uHMxLpkx7wf5Vu9eYUCaEc8C2zMDU7BYWYfwAxAqJpLTG4ucJfgcnXQYV1mofe6vMDMHCd",
+    "mint": "NoEncontrado",
+    "liquidity": 6.05,
+    "priceBuy": 0.06233374,
+    "priceSell": 0.07480049
+  },
+  {
+    "time": "2025-08-15T23:44:40.529Z",
+    "signature": "51LTeVgF2SpZSq7v2PGxLwVn7eNaVmwaTBdM1hP3MSeQeeB2fWHvcc1A1Uty4joEGPyp2uTHkGcVwdKYWECBEhPb",
+    "mint": "NoEncontrado",
+    "liquidity": 6.41,
+    "priceBuy": 0.01652559,
+    "priceSell": 0.01983071
+  },
+  {
+    "time": "2025-08-15T23:44:40.532Z",
+    "signature": "2tkXHKXeuYC6qBJUXELqjEvuuwasBNVZMtxditQap3KeiTb9cPd2fqniGVvPULPzCqeSWCaTRZLHfXc1nL8LQ8jc",
+    "mint": "NoEncontrado",
+    "liquidity": 0.71,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.654Z",
+    "signature": "2ZE2ufe5hZMwRFd6UQNxyLshZ2GdGwkreSeYFUF8F4o1LoGNf4QSdRQAvVf17m3sidrbn4BzVEiFAzNtD2MsSPr8",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.59,
+    "priceBuy": 0.09513881,
+    "priceSell": 0.11416657
+  },
+  {
+    "time": "2025-08-15T23:44:40.660Z",
+    "signature": "2UCVy1wcvb3E2ZAi8vL4oZXjAjScfSqsQWz2hJmiAswNeo9aY3bkViJ5g7mkpRKhq6hHJTanAtg3sH75TSYX23qv",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.38,
+    "priceBuy": 0.04568656,
+    "priceSell": 0.05482387
+  },
+  {
+    "time": "2025-08-15T23:44:40.667Z",
+    "signature": "37ru9r9h7EFvPxmGhz4rj3dmkg6sjW7Cc3qZ2dERxZAf87KHHatCXx2ev2XdjjdyW4MPVLaSydki6VtU5eqnuQxg",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.98,
+    "priceBuy": 0.07430951,
+    "priceSell": 0.08917141
+  },
+  {
+    "time": "2025-08-15T23:44:40.674Z",
+    "signature": "315MDhtvn61bNQxCAh82Lsh9ZCWKGZjQ7KrvFuAm1GfoKgBQZuY9UyRf5SHwq1K8yqcCsMqXXdfuxx4hbDrcGLrM",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.4,
+    "priceBuy": 0.14857287,
+    "priceSell": 0.17828744
+  },
+  {
+    "time": "2025-08-15T23:44:40.680Z",
+    "signature": "4QVEnsWbFbb9GdmjiTvVYDrUULoxgqxoF43svcBvx1ZQZkDxXYT9ZPiQKdsWkeD9BWDSuGxddeze1RwZKdYZ1RwF",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.16,
+    "priceBuy": 0.10164152,
+    "priceSell": 0.12196982
+  },
+  {
+    "time": "2025-08-15T23:44:40.683Z",
+    "signature": "4n89DYmJXRP2LNyUiZ6bdWbPQkfhJ3J6GZmfb2E1iyCrD7AFpvt3AGbFcqU7UYoM6MRw8Gd5PtLatHefPj3c1cPj",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.96,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.690Z",
+    "signature": "2vb4N6CvmDqoxSNE8XmNNA4U3q46JVnrGgcV34i7P9VArxj5XXj1xo9ysCksVNBogzdhQj63kY2cQ2j8JzTR8LWw",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 1.07,
+    "priceBuy": 0.11834533,
+    "priceSell": 0.1420144
+  },
+  {
+    "time": "2025-08-15T23:44:40.696Z",
+    "signature": "4AzYzAMwsyo5vEZ6FLzogN1HXDUS7CqWJFBxqYSRT2SiKCdkXu3wo6648vo4tB3NKPkrLV9jnzj3ZeCzzK42rDMy",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.78,
+    "priceBuy": 0.01467065,
+    "priceSell": 0.01760478
+  },
+  {
+    "time": "2025-08-15T23:44:40.702Z",
+    "signature": "4pGRqmokcitsYoMvkudTaCzR37CXWGCNe5aGrGDmfXVxmzXKEoRAzWRv1rPUMSAuqb3GkfyVKVt5VwZ29hUtR6Vt",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.05,
+    "priceBuy": 0.06111908,
+    "priceSell": 0.0733429
+  },
+  {
+    "time": "2025-08-15T23:44:40.708Z",
+    "signature": "2muFAoyajvMdSXv4We2MwWo8PHDkCXHywp8iHzeiKppZ6zixnXyuAiRiMdY9LKprLb3DGJCKKvYC5Cg6MigNZeuc",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 6.22,
+    "priceBuy": 0.06976058,
+    "priceSell": 0.0837127
+  },
+  {
+    "time": "2025-08-15T23:44:40.715Z",
+    "signature": "5HRk4z3VHEhJjumhXyBd1vLzzEif6TKr5mW3R2ugfkjDa4gC7CZ13wnRC8W6NWYkZrbu9XRsNJMnM5KMP5x6jHCE",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.67,
+    "priceBuy": 0.03396471,
+    "priceSell": 0.04075765
+  },
+  {
+    "time": "2025-08-15T23:44:40.723Z",
+    "signature": "4DSx2vg8ChFbEk6jQKP17qUMWxByz8VvutUKZ7fHetQes1sjccSdPSEjm9XwLGGxxsq9xbfkbk8NrtqBszbwGDvT",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 13.65,
+    "priceBuy": 0.07131512,
+    "priceSell": 0.08557814
+  },
+  {
+    "time": "2025-08-15T23:44:40.729Z",
+    "signature": "3umkTSWx16jzp4P2jvyJ9fKNswRVcsFXcWENWBzwxs4uE3pKPEuAyPcvA1L1y5CgfWYrrKCecyjTLZvEsz1zf35L",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.24,
+    "priceBuy": 0.03933802,
+    "priceSell": 0.04720562
+  },
+  {
+    "time": "2025-08-15T23:44:40.736Z",
+    "signature": "47MJSFrVvuATfqwHfWECK2vh65KZd5RqY9pwwvVu8ym7KoqpKiCZ1wmAWijWNBRhkF2ZkNj25e5B6Ghc61Ck5g4f",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.81,
+    "priceBuy": 0.0010211,
+    "priceSell": 0.00122532
+  },
+  {
+    "time": "2025-08-15T23:44:40.743Z",
+    "signature": "NGHnRCvE6nE721w2R4yaeNvgc6R6AubkqfFWJ6cZHwqWYY4mwagKPsRq2MwcDFYCGCX3gMTnAao47suxzhsaujh",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 7.93,
+    "priceBuy": 0.11661271,
+    "priceSell": 0.13993525
+  },
+  {
+    "time": "2025-08-15T23:44:40.749Z",
+    "signature": "3k5CHE6yWCpZySbrEVxdtY1snz8hvyBdwB2H9NVqBovjvwxMXMBZEH3TEN2CXytJfxAGWf97GwxUKSd21AFU9FPk",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.04,
+    "priceBuy": 0.01343207,
+    "priceSell": 0.01611848
+  },
+  {
+    "time": "2025-08-15T23:44:40.757Z",
+    "signature": "5gxvH5J17DNqnFoMDVcPjFT7viYi1GJasANwmUE95YghCuzVQFQXew2oNLu7g8vCpMEMspRa6fE6BcKJgY5t1jAn",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.9,
+    "priceBuy": 0.11097584,
+    "priceSell": 0.13317101
+  },
+  {
+    "time": "2025-08-15T23:44:40.760Z",
+    "signature": "4NZynP8jKo1qbgoHMZ6WjoSRdXkoKiujfWGTYSmStB3LXwvPmppMBzamrmoTKzAyhvNwGtGgd2XHCoTMr4PeoudP",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.17,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.763Z",
+    "signature": "3atsC2ozLs9ZxGcHnjoPP7CD499hsbC6CG5srTbmgENNQ6CdwHKoNkayJZPyM3noYTjyT28PuYXXKSMcdyaZ9f4h",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.59,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.769Z",
+    "signature": "3FP25GHEgNULzChXpck54CGDQH6hYHRTneyhPPjx2QFS7qahdYmm9YF5jMoafAJB55a8DvZx8xLaEdDkr3Jfugns",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.77,
+    "priceBuy": 0.01605812,
+    "priceSell": 0.01926974
+  },
+  {
+    "time": "2025-08-15T23:44:40.772Z",
+    "signature": "Anj5zKAA1iQ9Y9WpVJs8pP63Xv9E3hHP4Zfa9vJDSEMj4u45jQNv78cxBjxbxQaXYrjFbq7XsDNx7miBVCs29k4",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.59,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.778Z",
+    "signature": "5Cta1KLpLhWHbeAGXAFo6osjGSJHxDkBB9NUj3zJVAxJSDerBJRFZjG7HiW1JKPwg5DcZN7o28PJG385rtuoKUDH",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 5.39,
+    "priceBuy": 0.068891,
+    "priceSell": 0.0826692
+  },
+  {
+    "time": "2025-08-15T23:44:40.785Z",
+    "signature": "4WBRC8tSTGYuJGR8WDW3eHkEQdokXMMyXDxnkm7KFq5xEf7ysfX8Th1iyaUC79kzHEnZymM3VohfPgcHkAPDLVpz",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.93,
+    "priceBuy": 0.14220324,
+    "priceSell": 0.17064389
+  },
+  {
+    "time": "2025-08-15T23:44:40.792Z",
+    "signature": "LFCDgEECcyYQk1ataRM8fvPiV2rN5vFJL1PHhmbLvAdi2ybYM49SC24jwxcL8b1iozATqTj7WyjSH9StjfQsWJa",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.55,
+    "priceBuy": 0.08660854,
+    "priceSell": 0.10393025
+  },
+  {
+    "time": "2025-08-15T23:44:40.799Z",
+    "signature": "64dmiZU2QHW1DXQ4CZYdpWXyUNJ4zD1ZQxMAZA4oS5rKxsBTABSRUhbrdZmRgbY6yjqiZyShEEnuXoDwWvkzevW9",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 13.94,
+    "priceBuy": 0.08349627,
+    "priceSell": 0.10019552
+  },
+  {
+    "time": "2025-08-15T23:44:40.805Z",
+    "signature": "3FSkV6yXtkH5Fnz4gVXkNtRf37ZRSpiQcVbuLViz8C1DxvG1YCCYJQ6pbe9TFAYW6C695ueTQx5HYDgKW3npBAAM",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.19,
+    "priceBuy": 0.0513689,
+    "priceSell": 0.06164268
+  },
+  {
+    "time": "2025-08-15T23:44:40.812Z",
+    "signature": "5SHmmoGZwk1mqtN7FPmSP4jLCcti9Ksse83KMLo9q7mWUUQvCSmTtQ1FT3nXLmS6Av2QaA2c1zJXDF78dnPjwU1h",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 6.85,
+    "priceBuy": 0.09142602,
+    "priceSell": 0.10971122
+  },
+  {
+    "time": "2025-08-15T23:44:40.819Z",
+    "signature": "4vBZKdoDp4oQi849hCwUZw4eYcNid7SfdNgRXPCurAHkunskWrkuaHaqJm5Vv3PGJBEuvDCt7qf5s6PwsCdJsvie",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 1.83,
+    "priceBuy": 0.11287351,
+    "priceSell": 0.13544821
+  },
+  {
+    "time": "2025-08-15T23:44:40.825Z",
+    "signature": "2FcPyirBFJRpKBNLJagBP5RuVuKvxzazzsj6TPsCwDYQLbWJ2CvF3sMMQHH8yFdgwLDm2bPNLcib6JmKRysgYLkL",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.43,
+    "priceBuy": 0.13769969,
+    "priceSell": 0.16523963
+  },
+  {
+    "time": "2025-08-15T23:44:40.832Z",
+    "signature": "yk4ogi6f6JmD3ZUVrJQcobbC48khL6UUdpdrHUaXdyQEn9sRNYgWpYBf2YWxTEwJ8LBQUuFMPotAMdhXpWYsJY3",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.55,
+    "priceBuy": 0.06510077,
+    "priceSell": 0.07812092
+  },
+  {
+    "time": "2025-08-15T23:44:40.837Z",
+    "signature": "3jHB4kMQQz9zRTaEZspdbnpvotWocJKRu7wWAw3Y62SxujY62eQXjSZiyucJqVGJm9TbMN2ZynAM9tEZa1uLe38r",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.28,
+    "priceBuy": 0.08955629,
+    "priceSell": 0.10746755
+  },
+  {
+    "time": "2025-08-15T23:44:40.843Z",
+    "signature": "5UkCWvGFSgst9hn1sHaKU6vUYRxYykebPxW3Xcv2F4fdTcYdncS1vQxAHdJWLhaWSCWe1DsXtwqkcaoBsexxfP9e",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.42,
+    "priceBuy": 0.08138716,
+    "priceSell": 0.09766459
+  },
+  {
+    "time": "2025-08-15T23:44:40.850Z",
+    "signature": "m6GHx6h82J7NrdmjSyEty7XqE8XmdEJ9DLzhCKGcPEZMhczj2NCTR8sqy3mrnx7VBdP8E1kqd328MK1txm2qGGy",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 2.53,
+    "priceBuy": 0.09100183,
+    "priceSell": 0.1092022
+  },
+  {
+    "time": "2025-08-15T23:44:40.857Z",
+    "signature": "3R2hFsac8BSExfb9MPgV7PWFunseaMRpQbLYNF8mk7mEz2Np27oHitxhBKesJCgnE1gUesJbvw5xj2ipQMLXaPaF",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 9.98,
+    "priceBuy": 0.11065338,
+    "priceSell": 0.13278406
+  },
+  {
+    "time": "2025-08-15T23:44:40.863Z",
+    "signature": "2t4XKnaDjPv3bVXiq9eto56SGKhSoSQPibkDPcGmgVfA5shcHc97DZ2yaDeyh1s9nJXdBZhCYwV7g5aHtYUJCYWk",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 3.41,
+    "priceBuy": 0.12092473,
+    "priceSell": 0.14510968
+  },
+  {
+    "time": "2025-08-15T23:44:40.870Z",
+    "signature": "3jXQqvugWUZWJ6MMuxVmZ7Q77WHr9mFexsBBHuSgA6QZ4Dg4o97R42zgVdc1GzMrGCmSLNk5obM4yibMiBsBdPnx",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.41,
+    "priceBuy": 0.13938117,
+    "priceSell": 0.1672574
+  },
+  {
+    "time": "2025-08-15T23:44:40.877Z",
+    "signature": "2yYUnMUh7E8fz7KxCNmrAhNQymTT1i7xBeahcqUfZRKHaGYinH3Dwpp1vCtAz34sPSM6ddRihH4pJ8QhGn6G1xVd",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 4.65,
+    "priceBuy": 0.10214061,
+    "priceSell": 0.12256873
+  },
+  {
+    "time": "2025-08-15T23:44:40.883Z",
+    "signature": "28fANh2FiMdMoyqK3F2SpHd5AGGo9UG6ik7kv71mJ8Hy5xtbL31TAD5oBZdWktqpDrT7sBugVFJyMvmDfxVwYtBa",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.11,
+    "priceBuy": 0.02243372,
+    "priceSell": 0.02692046
+  },
+  {
+    "time": "2025-08-15T23:44:40.887Z",
+    "signature": "3T1XJYWMZByDDeCRq59XC3ZffH7p1JLzgrKBZ8VUBMMGvRmK7v3LWrnEbaCFKJmG3XeHoWkqLL4cir7TGCcXUhKS",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.39,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.893Z",
+    "signature": "2ojZQmpDAy4zbfMbXgJ8kC4obH9J65pUhndeSq9ezRx4v1NuUYekx8TXXNvfpNJkfJE9VtzfxM2d5WaKdqXZLVwj",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.52,
+    "priceBuy": 0.11579763,
+    "priceSell": 0.13895716
+  },
+  {
+    "time": "2025-08-15T23:44:40.935Z",
+    "signature": "2af9NTkKesiu6AhKSjRy7EExwSK2MqaYFH7mBmzBmU1NbWQCNTHFtnm4MpDieAt5d9d594aqLoKpJGFNfgw6wx5W",
+    "mint": "NoEncontrado",
+    "liquidity": 8.33,
+    "priceBuy": 0.00122055,
+    "priceSell": 0.00146466
+  },
+  {
+    "time": "2025-08-15T23:44:40.941Z",
+    "signature": "5DehqV6JhaRBGt4hiGGnYjeZFsojoqsGsDXcwAzW3oXvL8eTdUCX3PyxQspeCw5sHD3XpH1Ain14zbXKhh8HRduQ",
+    "mint": "NoEncontrado",
+    "liquidity": 12.45,
+    "priceBuy": 0.08581617,
+    "priceSell": 0.1029794
+  },
+  {
+    "time": "2025-08-15T23:44:40.949Z",
+    "signature": "53TPKTwcotk23erbSVMiYeR69KN4HLUGKWtsqtB5GmnExVcxydRgzpSECe5Ek3TuuDcC3hteDDnBLE34BJAcnNuo",
+    "mint": "NoEncontrado",
+    "liquidity": 8.56,
+    "priceBuy": 0.02785256,
+    "priceSell": 0.03342307
+  },
+  {
+    "time": "2025-08-15T23:44:40.956Z",
+    "signature": "JxNJFPANr7pPbzMDa17JQ8ius8Pf65HdoM1mZKhKEESp7bisR4p4JYSovVH5N18Y3T49igdVDTWAUK5ebNp7GXc",
+    "mint": "NoEncontrado",
+    "liquidity": 2.77,
+    "priceBuy": 0.1394381,
+    "priceSell": 0.16732572
+  },
+  {
+    "time": "2025-08-15T23:44:40.962Z",
+    "signature": "WhXGDSNTdSEaYyipRyzuWz4fhd4aJufQiw2ksm9WCSJH1iHj4sV41RkMGLH5qgMHk4WzmGqHkHkxjjitanwa6T3",
+    "mint": "NoEncontrado",
+    "liquidity": 13.63,
+    "priceBuy": 0.04508631,
+    "priceSell": 0.05410357
+  },
+  {
+    "time": "2025-08-15T23:44:40.969Z",
+    "signature": "5mXgKtAxsV9is2GUNCbeDURZCRdaQv7QfPHEP4BhnZ5DnN4XYVEkSPhfMSbx6n4xzXZSddNeZ2PfD35rei2JTrv",
+    "mint": "NoEncontrado",
+    "liquidity": 12.13,
+    "priceBuy": 0.12392289,
+    "priceSell": 0.14870747
+  },
+  {
+    "time": "2025-08-15T23:44:40.975Z",
+    "signature": "5C4nhq8UX36S57GhkxD6ktbfjiqCqVYP9G4cxSfaqKsmy8g5qhZAARjUETUWm467aHPVLqUSMWVApbyoL1k24Zf5",
+    "mint": "NoEncontrado",
+    "liquidity": 3.98,
+    "priceBuy": 0.14568539,
+    "priceSell": 0.17482247
+  },
+  {
+    "time": "2025-08-15T23:44:40.978Z",
+    "signature": "5HeymxFKmrFujgi1Nhkt13SLFjMEzRPH7XB6xF31tSt5LVdyMnMdyTn3ntJpcKaVBAWcnKpmVxLgZv68J1f7YbyQ",
+    "mint": "NoEncontrado",
+    "liquidity": 0.1,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:40.985Z",
+    "signature": "3mSTkzPd48gpLkTp6nsTD8jnaGGCHPdT99YAoWtboo2Fs9MquV1bSnyqS4JJiLjrWqvT9LPPPb5NPp2xYiXXxFYF",
+    "mint": "NoEncontrado",
+    "liquidity": 10.45,
+    "priceBuy": 0.00471813,
+    "priceSell": 0.00566176
+  },
+  {
+    "time": "2025-08-15T23:44:40.992Z",
+    "signature": "2ZHjCpDdEcS6LRB22JXF2dKiyoypXNNCTmHZogePexB1mP9hW26dKddQ8jFcKa4Zrj4Xx6TcjPysoDooXQmiA7JY",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.1,
+    "priceBuy": 0.13249863,
+    "priceSell": 0.15899836
+  },
+  {
+    "time": "2025-08-15T23:44:40.996Z",
+    "signature": "215bYKKTyVmqt9WWZTpx9dKwSc8sLADZk3MBRKSSkeuK6kfnuBp1x9AwhAhEkbu6BuUDt8oAhwzaavBgeyaB2rhi",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.95,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:41.003Z",
+    "signature": "5oAkL2cmNGCqoNZDBZCcPxGyAL6mJuMxaEiLbTVhtMAz4xaapG95Rf9UHnGBPypeTk2Cvedax4cVUVbtB1ZrtSiu",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 14.23,
+    "priceBuy": 0.06456913,
+    "priceSell": 0.07748296
+  },
+  {
+    "time": "2025-08-15T23:44:41.014Z",
+    "signature": "H8pLyHgyBKbKFfEXxEo9fJB1dLwrQFcT9oe4RaHKvm1J1P8Dvajptx6U1mFCYL9NX5MTVPKhiqcyQ3oyWS1hnCV",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 8.36,
+    "priceBuy": 0.04456329,
+    "priceSell": 0.05347595
+  },
+  {
+    "time": "2025-08-15T23:44:41.020Z",
+    "signature": "5GbpCXwhyRWspUcg1d44anBH3httmF5nh65bcdGFJHfcwbd5Y4RWBSR6VWGeU9y9ugC8jVeCyNE3FcSbVb27JU1L",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 11.67,
+    "priceBuy": 0.05343048,
+    "priceSell": 0.06411658
+  },
+  {
+    "time": "2025-08-15T23:44:41.027Z",
+    "signature": "5mju3B8yobQPrNm5M3Jea32QDTiBrQcTtbswzp2NSKh4haQkyoMVC8yas9GXK1WVK2GW5zWgx6tbzWWjAPwRp3Eq",
+    "mint": "NoEncontrado",
+    "liquidity": 12.72,
+    "priceBuy": 0.11838427,
+    "priceSell": 0.14206112
+  },
+  {
+    "time": "2025-08-15T23:44:41.033Z",
+    "signature": "3bRpHiWeujGAJscDCAfJzx8qiqphCMwLBTCkaNyeqv2KoMWF2M6tA5G1BrEhAduH1vC5KTxEZMiCC3u7TZa9u14a",
+    "mint": "NoEncontrado",
+    "liquidity": 12.65,
+    "priceBuy": 0.11106183,
+    "priceSell": 0.1332742
+  },
+  {
+    "time": "2025-08-15T23:44:41.039Z",
+    "signature": "3ADrhYqrBFWgoCKZbJCv2XtPKmhA1RV7NiDeLchqcxJrXUcXSwkb3237ZqEcnvskHWFFC5Xsds8YnAqtMX1h1EAk",
+    "mint": "NoEncontrado",
+    "liquidity": 14.47,
+    "priceBuy": 0.03625208,
+    "priceSell": 0.0435025
+  },
+  {
+    "time": "2025-08-15T23:44:41.046Z",
+    "signature": "23489mxbNVGmW4Ntx92HJd8kTD47hYsT4QpNCfeUeJMmfDUYXHTVzKeohppQjWoBUPLZm1xF8ibD8Ja2CJTAFfkp",
+    "mint": "NoEncontrado",
+    "liquidity": 9.75,
+    "priceBuy": 0.09454585,
+    "priceSell": 0.11345502
+  },
+  {
+    "time": "2025-08-15T23:44:41.053Z",
+    "signature": "48VqiK3ZYuY2Zt7FxHePfH8zPUnUbE5ViSLsrPTfEaXwJWgZ9EFGopXvLoWm2HHKkNEqbuv1cbzkYHVXNvNxKE5d",
+    "mint": "NoEncontrado",
+    "liquidity": 1.01,
+    "priceBuy": 0.13012416,
+    "priceSell": 0.15614899
+  },
+  {
+    "time": "2025-08-15T23:44:41.059Z",
+    "signature": "54KUqicT93xsgmDEfQZZaAHeZFwGhG3o3GrzcZ6qdJUmgLpDpZPHG6N9MXw1muEtrz5ut3pMUP5hTXGntHH46NCb",
+    "mint": "NoEncontrado",
+    "liquidity": 12.51,
+    "priceBuy": 0.06066555,
+    "priceSell": 0.07279866
+  },
+  {
+    "time": "2025-08-15T23:44:41.065Z",
+    "signature": "QdqS978py8ecMsGqajPvMzhmkn42gYwvQ2THuJYhCQCRcVRRJwsiJzaiQXFoPpyLE38dHUnxkHMCpZPxodYtiDe",
+    "mint": "NoEncontrado",
+    "liquidity": 4.21,
+    "priceBuy": 0.00726638,
+    "priceSell": 0.00871966
+  },
+  {
+    "time": "2025-08-15T23:44:41.071Z",
+    "signature": "2eZaVaYCpZpeuxuER6KgW9X94apQNyguq8uEgsQTGzHABwhFZfeGPUxtymFFrpCM9w6e1humnpNMY7d8t8CqyY4Z",
+    "mint": "NoEncontrado",
+    "liquidity": 2.68,
+    "priceBuy": 0.09992637,
+    "priceSell": 0.11991164
+  },
+  {
+    "time": "2025-08-15T23:44:41.075Z",
+    "signature": "53bvfwpVZztmvoKskmXv6ET2N4j3GTTNhYzKy6AMxdTQXm1gRwpbqAvNNHQyJN5bxVYHsxiKAh85dXfRivD91KyH",
+    "mint": "NoEncontrado",
+    "liquidity": 0.72,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:41.081Z",
+    "signature": "4hnwADLao7qbie4MPoNCk2SWAdMnBWFZKaf6SysFZhmJweWQfeqGDh4xrzekguBDeg29KydAYFybNd9NFwg77L6H",
+    "mint": "NoEncontrado",
+    "liquidity": 1.27,
+    "priceBuy": 0.05877347,
+    "priceSell": 0.07052816
+  },
+  {
+    "time": "2025-08-15T23:44:41.087Z",
+    "signature": "2v4HVN11iwbLR7NLHeKDFUhLD14vsoFfFemdq7o7ZLooEEtKx4AedA4NthGwdV9PerwLRacgyXYrjpqL4YWoKszA",
+    "mint": "NoEncontrado",
+    "liquidity": 14.49,
+    "priceBuy": 0.06370883,
+    "priceSell": 0.0764506
+  },
+  {
+    "time": "2025-08-15T23:44:41.094Z",
+    "signature": "47bHrYs8SV4CDXkcVCvyR22Xw3tBiVNtsmc3JrkgNf9zoCx3kWxGouMSsigqjm3fkSNWxpxN6bzhmQ297egeiAZr",
+    "mint": "NoEncontrado",
+    "liquidity": 3.09,
+    "priceBuy": 0.1080014,
+    "priceSell": 0.12960168
+  },
+  {
+    "time": "2025-08-15T23:44:41.100Z",
+    "signature": "2yrKR16PZuQtYBhqpMdi9iHNe98nqSKS9cxoH2o2daz225hNDxSgi83tVyPofL4eFXmhhCEbHUngX7uhzhdZ4agF",
+    "mint": "NoEncontrado",
+    "liquidity": 10.18,
+    "priceBuy": 0.02564441,
+    "priceSell": 0.03077329
+  },
+  {
+    "time": "2025-08-15T23:44:41.106Z",
+    "signature": "3MzAtBQvmQLM6knHgzxnnVgJmZ73Yt6NcYKBzbQ11bUNxo79VR9WRjmLgVZwV117uSySMrcRJK2m4sMG88BkmMAT",
+    "mint": "NoEncontrado",
+    "liquidity": 12.53,
+    "priceBuy": 0.0798162,
+    "priceSell": 0.09577944
+  },
+  {
+    "time": "2025-08-15T23:44:41.113Z",
+    "signature": "2riPG8SX3yJ5azUAG2ugCWXfGqvLTNtW6vZ9PML5yAzyTrWaJaxemmLNMSgu19zHtHWGfEZT9MZbf5qHz3b257dX",
+    "mint": "NoEncontrado",
+    "liquidity": 4.56,
+    "priceBuy": 0.08667724,
+    "priceSell": 0.10401269
+  },
+  {
+    "time": "2025-08-15T23:44:41.120Z",
+    "signature": "QVkyngaMwpowisssoJvsgyT7WBB2Yo7aaG5JJ3Gsbc1w3d3pUgCj2QYSxW8U9y23GmVwSe6VdP1JHrDmTSiLLjk",
+    "mint": "NoEncontrado",
+    "liquidity": 4.47,
+    "priceBuy": 0.08554972,
+    "priceSell": 0.10265966
+  },
+  {
+    "time": "2025-08-15T23:44:41.127Z",
+    "signature": "mRq9FyKRhcpjyrjXSoYWE9pjTf8vEyruAeEd3mhoabWynLh49QTe1DsaDwfy8yYuc5McbihPReriNw86hfBfVFW",
+    "mint": "NoEncontrado",
+    "liquidity": 6.42,
+    "priceBuy": 0.006784,
+    "priceSell": 0.0081408
+  },
+  {
+    "time": "2025-08-15T23:44:41.134Z",
+    "signature": "BeWAwEXety3HaUmhGWz4X7NaA9ocQYzR6sFocULVi43wXPpNWtKxT7aXbswd7G9hJbS5G64vc4iRzQH6kLGxWFT",
+    "mint": "NoEncontrado",
+    "liquidity": 6.61,
+    "priceBuy": 0.03985019,
+    "priceSell": 0.04782023
+  },
+  {
+    "time": "2025-08-15T23:44:41.140Z",
+    "signature": "2ES1PYX1xZ9XzXpyKBvDMDH2V7AXApM7SWiQREqHGBijUaQcYGMy73KGcW7qTvBs5WxD9LgWWfKEdX3Ta9HHsQoD",
+    "mint": "NoEncontrado",
+    "liquidity": 7.58,
+    "priceBuy": 0.06809349,
+    "priceSell": 0.08171219
+  },
+  {
+    "time": "2025-08-15T23:44:41.144Z",
+    "signature": "4s8x2HRmEsPEST9M17qxJWqGhiDE8hrv7SeW4Ab7coDninjLxpoTHv3YYZ3xfRf4XTdkTidnnvXYVdpkNkJJVvnR",
+    "mint": "NoEncontrado",
+    "liquidity": 0.76,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:41.150Z",
+    "signature": "5eVrKcfUw4vnhUgJwvi7xMpVpHaTZftyuE8aSrdicUd9BBBYACveq7RwyCsu8f23uuB1UkBAoZVNsptsjoEDMPGB",
+    "mint": "NoEncontrado",
+    "liquidity": 3.37,
+    "priceBuy": 0.0873837,
+    "priceSell": 0.10486044
+  },
+  {
+    "time": "2025-08-15T23:44:41.255Z",
+    "signature": "4hBxjLzNbVQWhL8WUHe7zMQUQKxt9DKdTZwmREEvDhDZaccp6f3CeWWGBiNxGj4GFQhohiBXSzFCroYp1gJoiY5Z",
+    "mint": "NoEncontrado",
+    "liquidity": 13.77,
+    "priceBuy": 0.08952516,
+    "priceSell": 0.10743019
+  },
+  {
+    "time": "2025-08-15T23:44:41.367Z",
+    "signature": "YCDJe5ckR2WhJW1ZY9kqYeFSn14YBgVghchBzLNUPmP5DeZetHNbBzV4uW86jZZv9pNv4vKLLfjpv8swE1vCsHK",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 0.12,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:41.373Z",
+    "signature": "2rq2CmvZtUT8PaEHeHZEzADrGSwH8hVpUuPvuk96Z8aEFfsubSFqzapm3b4UhYWPhhzYjVB8pDoZXnVNSDCdqS2f",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": 12.09,
+    "priceBuy": 0.02846039,
+    "priceSell": 0.03415247
+  },
+  {
+    "time": "2025-08-15T23:44:41.387Z",
+    "signature": "SmWLFGuJff2dtdXVQ2pqj6febx7i4ZHs6RUY3PHnQFtEpWhrExTgJyyfkfkRPiSZ5cd63ndH2eNx7fkv6ueL2VB",
+    "mint": "NoEncontrado",
+    "liquidity": 1.89,
+    "priceBuy": 0.12844562,
+    "priceSell": 0.15413474
+  },
+  {
+    "time": "2025-08-15T23:44:41.396Z",
+    "signature": "25o8nQ85XcyXFAW82xYGk2aUyvnMiPoEcJQPzEBkpaceFjyCZskdrgPyRRBMsNotW8whzi6BBeBsSPUAb8wUn8uB",
+    "mint": "NoEncontrado",
+    "liquidity": 14.73,
+    "priceBuy": 0.11257551,
+    "priceSell": 0.13509061
+  },
+  {
+    "time": "2025-08-15T23:44:41.400Z",
+    "signature": "5yMWMwi47VTUZuxdHZfNutEGkGsjLfZabjCXRwSd7asgpE5RrLCpqvs6UxsCcMHpkBMBCscZkMpy3rQBTvfvXpwh",
+    "mint": "NoEncontrado",
+    "liquidity": 0.71,
+    "reason": "Liquidez insuficiente"
+  },
+  {
+    "time": "2025-08-15T23:44:41.406Z",
+    "signature": "4PmjYWJNNS6Y2g7R7E4Wixbe3TqrMBfdNJweSVZT4QvDGubj4frGKprBk9MVQuxWqwBxKSQgQLjMeaWf54pi8BSp",
+    "mint": "NoEncontrado",
+    "liquidity": 2.33,
+    "priceBuy": 0.12037862,
+    "priceSell": 0.14445434
+  },
+  {
+    "time": "2025-08-15T23:44:41.413Z",
+    "signature": "VkJu2m8WRVcpntFg8HS7aTCH4LqLB8wTBCbJjFvWqWaXw5724nKKuxyemJXMUNSLrMwe7VzCUxbMS5EFUe6aMSp",
+    "mint": "NoEncontrado",
+    "liquidity": 5.35,
+    "priceBuy": 0.13369277,
+    "priceSell": 0.16043132
+  },
+  {
+    "time": "2025-08-15T23:44:41.420Z",
+    "signature": "4uNFy4323w7U3xhJrmFzMXrdje4MtEauAKRHSUzSZm9gDoTqTnhGvhLGLpbs8wSG9ZijZUmLzMp87cKhXVJeCSNP",
+    "mint": "NoEncontrado",
+    "liquidity": 12.12,
+    "priceBuy": 0.05481766,
+    "priceSell": 0.06578119
+  },
+  {
+    "time": "2025-08-15T23:44:41.426Z",
+    "signature": "3Ek9TfyWkfrSsF73C7Vt9AjRvs6U7arAJDSRovtrFwUrnQrX2wtHcKw51ef7JxEkk2CaMhM5TV96RwkmuwVbFsy4",
+    "mint": "NoEncontrado",
+    "liquidity": 2.25,
+    "priceBuy": 0.11170637,
+    "priceSell": 0.13404764
+  },
+  {
+    "time": "2025-08-15T23:57:19.938Z",
+    "signature": "3kv2zKvrxaSE38NDcHWJbbEKJzBzRXvHrYANJ1Uxim8NsA5g5TX6QyNLkfoZfypAQ2RXdHraVX6e3XUpYDRBi5cA",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "3.45",
+    "priceBuy": "0.09833020",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:20.090Z",
+    "signature": "2gNdyNzB1WgcsgqTrtBYNzfb1CQcLRpd3HUPss5nWC4S38SmTzBG7F3gDozHymfVt8a3WHog5N3fneTMKU5tvfJZ",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "9.13",
+    "priceBuy": "0.14828633",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:20.245Z",
+    "signature": "36xdPBqKj3X5saMvWjqDNQ7kWv39GGNjwZ5uFFXxhkLeaH4x2SzTCbmXL3uoQ455e3TeC8rNUk6knFUUcTM27eFh",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "14.08",
+    "priceBuy": "0.12164960",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:20.393Z",
+    "signature": "GWxH825UkwJpdZ9eB5c8jcX13wUzdvxFwSG29EF6fh6nm1PsTj3MgdF2ej85DwbEcm6L6FESXPpznRhpesySrb5",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "1.01",
+    "priceBuy": "0.06188879",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:20.545Z",
+    "signature": "426mwGX76WqyroLnDp365DxVk2KBx77K73rm1Z2nC8qKyiCBq42P23AsUEYvP7rAuG5GDig7nGaPCAx9JP4Jo5ZN",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "10.65",
+    "priceBuy": "0.01101336",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:20.699Z",
+    "signature": "5TDDhYTC7vopsZgt4M8n1LBfAnRkmidZT3Qh87d89ABm8rWaQcRVWtHPaD34ZXkQ1WW7oNKKSYCL9NzmFQBheiNt",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "5.69",
+    "priceBuy": "0.01273496",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:20.849Z",
+    "signature": "2pFSBGJwUZ9NfNxFm8DCwqPCEzS2PXcLd8fUnkLbB7VBmZ81v3rQDofKbvuLPC2XwncoTxX38YopdivQGJyYoiFw",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "4.12",
+    "priceBuy": "0.04402254",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:21.019Z",
+    "signature": "2ZRPpu9MyjGMyEedsEQXWug2Z25bMcc794qHgZ1n1ugWx8DDD4WwzQWh24kcH9REd7gwV89KrBbbTEkSaRQXjWap",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "7.97",
+    "priceBuy": "0.11822349",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:21.180Z",
+    "signature": "4ridNsay3UvmuvUSpq4wJD99cpYLgJ24L38yitp4Q33HUzvqx2uB7iSUY2FaYNJat69PYBuSXRCKWKcJm5dRBn1W",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "2.44",
+    "priceBuy": "0.09615074",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:21.326Z",
+    "signature": "28rkcdxi8YGMuQTM9XQLAbkD2xxzFv9XZZFEvNtrkweZfwBDVBpHyTeLe3kr4deZuNcZQVVtfQMEwHYu97SVQVjU",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "4.85",
+    "priceBuy": "0.01908191",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:21.479Z",
+    "signature": "4vozNEK1511GbGsDszrkEnnAW7dnUFA2KhiB2E6dFZTsCgK5yA5UvNBF8mBBe2PociJtsS3q8FCfcMm6Fn866jdz",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "3.21",
+    "priceBuy": "0.13304830",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:21.629Z",
+    "signature": "fr6jQdrJhG9qShR1S1LHEDQWhPGpybn51KkS5P4j1TAMkSTozRuoySfH718on8DgaWQ27iCHtqdpRZ3AMDUbAHf",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "13.79",
+    "priceBuy": "0.01500505",
+    "solSpent": 0.5
+  },
+  {
+    "time": "2025-08-15T23:57:21.773Z",
+    "signature": "E9jzjjn7rNHFsMdsVbBAfxwqEgAxDbWfdNXVCDzSLxGKgNRmzC3K2jg2BwaF2hYgizo4b9pUBwvGtNHnBT9Dwft",
+    "mint": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "liquidity": "10.19",
+    "priceBuy": "0.07640798",
+    "solSpent": 0.5
+  }
+]
